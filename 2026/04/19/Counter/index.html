@@ -68,6 +68,10 @@
 
 
 
+  
+<link rel="stylesheet" href="/.mermaid%20svg%20%7B%0A%20%20background:%20transparent%20!important;%0A%20%20transform:%20scale(0.75);%0A%20%20transform-origin:%20center%20top;%0A%7D%0A.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -381,12 +385,12 @@
             
               <div class="markdown-body">
                 
-                <h1 id="counter模块"><a class="markdownIt-Anchor" href="#counter模块"></a> Counter模块</h1>
-<h2 id="一-是什么"><a class="markdownIt-Anchor" href="#一-是什么"></a> 一、是什么</h2>
+                <h1 id="counter模块">Counter模块</h1>
+<h2 id="一、是什么">一、是什么</h2>
 <p><code>Counter</code> 是 <code>collections</code> 中的<strong>计数工具</strong>，用于统计<strong>列表、字符串、元组</strong>等可迭代对象中元素出现次数。</p>
-<h2 id="二-基本使用"><a class="markdownIt-Anchor" href="#二-基本使用"></a> 二、基本使用</h2>
+<h2 id="二、基本使用">二、基本使用</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter<br><br>data = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]<br>c = Counter(data)<br></code></pre></td></tr></table></figure>
-<h2 id="三-常用操作必背"><a class="markdownIt-Anchor" href="#三-常用操作必背"></a> 三、常用操作（必背）</h2>
+<h2 id="三、常用操作（必背）">三、常用操作（必背）</h2>
 <ol>
 <li><strong>获取某个元素的次数</strong></li>
 </ol>
@@ -411,11 +415,11 @@
 <li><strong>遍历所有元素和次数</strong></li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> c.items():<br>    <span class="hljs-built_in">print</span>(k, v)<br></code></pre></td></tr></table></figure>
-<hr />
-<h2 id="四-高频场景一次拿到最多和最少"><a class="markdownIt-Anchor" href="#四-高频场景一次拿到最多和最少"></a> 四、高频场景：一次拿到【最多】和【最少】</h2>
+<hr>
+<h2 id="四、高频场景：一次拿到【最多】和【最少】">四、高频场景：一次拿到【最多】和【最少】</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter<br><br>lst = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>]<br>c = Counter(lst)<br><br>max_item = c.most_common(<span class="hljs-number">1</span>)       <span class="hljs-comment"># 最多</span><br>min_item = c.most_common()[-<span class="hljs-number">1</span>]    <span class="hljs-comment"># 最少</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;最多：&quot;</span>, max_item)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;最少：&quot;</span>, min_item)<br></code></pre></td></tr></table></figure>
-<hr />
-<h2 id="五-极简总结"><a class="markdownIt-Anchor" href="#五-极简总结"></a> 五、极简总结</h2>
+<hr>
+<h2 id="五、极简总结">五、极简总结</h2>
 <ul>
 <li>导入：<code>from collections import Counter</code></li>
 <li>统计：<code>Counter(可迭代对象)</code></li>
@@ -474,8 +478,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/04/15/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2026/04/15/%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B/" title="各种操作示例">
+                        <span class="hidden-mobile">各种操作示例</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -796,7 +800,7 @@
 
   
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script src="/(function()%20%7B%0A%20%20document.addEventListener('DOMContentLoaded',%20function()%20%7B%0A%20%20%20%20mermaid.initialize(%7B%20%0A%20%20%20%20%20%20startOnLoad:%20true,%0A%20%20%20%20%20%20scale:%200.8,%0A%20%20%20%20%20%20theme:%20'default'%0A%20%20%20%20%7D);%0A%20%20%20%20/%20%EF%BF%BDE-%01P6%00'%EF%BF%BD%EF%BF%BD%0A%20%20%20%20document.querySelectorAll('.mermaid').forEach(el%20=%3E%20%7B%0A%20%20%20%20%20%20el.style.maxWidth%20=%20%2280%25%22;%0A%20%20%20%20%20%20el.style.margin%20=%20%222rem%20auto%22;%0A%20%20%20%20%20%20el.style.display%20=%20%22flex%22;%0A%20%20%20%20%20%20el.style.justifyContent%20=%20%22center%22;%0A%20%20%20%20%7D)%0A%20%20%7D);%0A%7D)();%0A.js"></script>
+<script src="/(function()%20%7B%0A%20%20document.addEventListener('DOMContentLoaded',%20function()%20%7B%0A%20%20%20%20mermaid.initialize(%7B%0A%20%20%20%20%20%20startOnLoad:%20true,%0A%20%20%20%20%20%20#%20%EF%BF%BD%EF%BF%BD%07b%EF%BF%BDr;%EF%BF%BD%0A%20%20%20%20%20%20theme:%20'dark',%0A%20%20%20%20%20%20#%20h@)%3E%01%02M:%EF%BF%BD%0A%20%20%20%20%20%20scale:%200.8,%0A%20%20%20%20%20%20flowchart:%20%7B%0A%20%20%20%20%20%20%20%20useMaxWidth:%20true%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D);%0A%20%20%20%20/%20:6%02M+E-+P6%00'%EF%BF%BD%EF%BF%BD%0A%20%20%20%20document.querySelectorAll('.mermaid').forEach(el%20=%3E%20%7B%0A%20%20%20%20%20%20el.style.maxWidth%20=%20%2290%25%22;%0A%20%20%20%20%20%20el.style.width%20=%20%22auto%22;%0A%20%20%20%20%20%20el.style.margin%20=%20%2220px%20auto%22;%0A%20%20%20%20%20%20el.style.display%20=%20%22block%22;%0A%20%20%20%20%7D)%0A%20%20%7D);%0A%7D)();%0A.js"></script>
 
 
 
