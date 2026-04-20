@@ -60,7 +60,7 @@
 
 
   
-<link rel="stylesheet" href="/.mermaid%20%7B%0A%20%20background:%20#1a1a1a%20!important;%0A%20%20border-radius:%208px%20!important;%0A%20%20padding:%2020px%20!important;%0A%20%20transform:%20scale(0.7)%20!important;%0A%20%20transform-origin:%20center%20center%20!important;%0A%20%20margin:%2020px%20auto%20!important;%0A%20%20max-width:%2090%25%20!important;%0A%20%20display:%20block%20!important;%0A%7D%0A.mermaid%20text%20%7B%0A%20%20fill:%20#ffffff%20!important;%0A%20%20font-size:%2014px%20!important;%0A%7D%0A.mermaid%20rect%20%7B%0A%20%20fill:%20#333%20!important;%0A%20%20stroke:%20#ccc%20!important;%0A%7D%0A.mermaid%20path,%20.mermaid%20polygon%20%7B%0A%20%20stroke:%20#fff%20!important;%0A%20%20fill:%20#fff%20!important;%0A%7D%0A.css">
+<link rel="stylesheet" href="/*%20:6%EF%BF%BD%EF%BF%BD%16B%EF%BF%BDh%EF%BF%BDo%20*/%0A.post-container%20%7B%0A%20%20%20%20background:%20#121212%20!important;%0A%7D%0A/*%20%EF%BF%BD%EF%BF%BD%20Mermaid%20%EF%BF%BDh%EF%BF%BD:6%EF%BF%BDr%20*/%0A.mermaid%20%7B%0A%20%20%20%20background:%20#1e1e1e%20!important;%0A%20%20%20%20border:%201px%20solid%20#444%20!important;%0A%20%20%20%20border-radius:%208px%20!important;%0A%20%20%20%20padding:%2020px%20!important;%0A%20%20%20%20margin:%202rem%20auto%20!important;%0A%20%20%20%20max-width:%2080%25%20!important;%0A%20%20%20%20text-align:%20center%20!important;%0A%20%20%20%20transform:%20scale(0.8)%20!important;%0A%20%20%20%20transform-origin:%20center%20center%20!important;%0A%7D%0A/*%20:6%20SVG%20%EF%BF%BD%EF%BF%BD7%0F%20*/%0A.mermaid%20svg%20%7B%0A%20%20%20%20display:%20inline-block%20!important;%0A%20%20%20%20background:%20transparent%20!important;%0A%7D%0A/*%20:6%EF%BF%BDW%7Dr%20*/%0A.mermaid%20svg%20text%20%7B%0A%20%20%20%20fill:%20#ffffff%20!important;%0A%20%20%20%20font-size:%2016px%20!important;%0A%20%20%20%20font-weight:%20500%20!important;%0A%7D%0A/*%20:6%EF%BF%BD%EF%BF%BD%EF%BF%BDF%EF%BF%BD%EF%BF%BDo%20*/%0A.mermaid%20svg%20rect%20%7B%0A%20%20%20%20fill:%20#333333%20!important;%0A%20%20%20%20stroke:%20#cccccc%20!important;%0A%20%20%20%20rx:%204px%20!important;%0A%20%20%20%20ry:%204px%20!important;%0A%7D%0A/*%20:6%DE%A5%EF%BF%BD%EF%BF%BD%EF%BF%BD4%EF%BF%BDr%20*/%0A.mermaid%20svg%20path,%0A.mermaid%20svg%20polygon%20%7B%0A%20%20%20%20stroke:%20#ffffff%20!important;%0A%20%20%20%20fill:%20#ffffff%20!important;%0A%7D%0A.css">
 
 
 
@@ -463,8 +463,39 @@
 
 
   
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.0/dist/mermaid.min.js"></script>
-<script src="/document.addEventListener('DOMContentLoaded',%20function()%20%7B%0A%20%20setTimeout(()%20=%3E%20%7B%0A%20%20%20%20mermaid.initialize(%7B%20theme:%20'dark',%20startOnLoad:%20true%20%7D);%0A%20%20%20%20document.querySelectorAll('code.language-mermaid').forEach(el%20=%3E%20%7B%0A%20%20%20%20%20%20const%20pre%20=%20el.parentNode;%0A%20%20%20%20%20%20const%20div%20=%20document.createElement('div');%0A%20%20%20%20%20%20div.className%20=%20'mermaid';%0A%20%20%20%20%20%20div.textContent%20=%20el.textContent;%0A%20%20%20%20%20%20pre.replaceWith(div);%0A%20%20%20%20%7D);%0A%20%20%20%20mermaid.init();%0A%20%20%7D,%20800);%0A%7D);%0A.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="// 等待页面完全加载
+document.addEventListener('DOMContentLoaded', function() {
+  // 初始化 Mermaid 为深色主题
+  mermaid.initialize({ 
+    theme: 'dark',
+    startOnLoad: true,
+    themeVariables: {
+      darkMode: true,
+      primaryColor: '#333333',
+      primaryTextColor: '#ffffff',
+      lineColor: '#ffffff',
+      mainBubbleBackground: '#2a2a2a'
+    }
+  });
+
+  // 核心补丁：Fluid 会把 mermaid 包在 pre 里，这里直接替换成真实 div
+  const intervals = setInterval(() => {
+    const codes = document.querySelectorAll('pre code.language-mermaid');
+    if (codes.length > 0) {
+      clearInterval(intervals);
+      codes.forEach(code => {
+        const pre = code.parentNode;
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = code.textContent;
+        pre.parentNode.replaceChild(div, pre);
+      });
+      mermaid.init(); // 手动渲染
+    }
+  }, 100);
+});
+.js"></script>
 
 
 
