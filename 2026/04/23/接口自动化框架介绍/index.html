@@ -19,28 +19,29 @@
   <meta name="author" content="EatingLee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo Fluid 主题最全常用文字排版示例">
+    <meta name="description" content="基于 &#96;pytest + requests + openpyxl + PyYAML + pymysql + allure&#96; 的数据驱动接口自动化测试框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="各种操作示例">
-<meta property="og:url" content="https://eatinglee123.github.io/2026/04/15/%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B/index.html">
+<meta property="og:title" content="接口自动化框架介绍">
+<meta property="og:url" content="https://eatinglee123.github.io/2026/04/23/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="EatingLee的技术博客">
-<meta property="og:description" content="Hexo Fluid 主题最全常用文字排版示例">
+<meta property="og:description" content="基于 &#96;pytest + requests + openpyxl + PyYAML + pymysql + allure&#96; 的数据驱动接口自动化测试框架">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://eatinglee123.github.io/images/%E5%A4%B4%E5%83%8F.jpg">
-<meta property="og:image" content="https://eatinglee123.github.io/images/%E5%A4%B4%E5%83%8F.jpg">
-<meta property="og:image" content="https://eatinglee123.github.io/images/%E5%A4%B4%E5%83%8F.jpg">
-<meta property="og:image" content="https://eatinglee123.github.io/images/image-20260420215220286.png">
-<meta property="og:image" content="https://eatinglee123.github.io/images/image-20260420221713250.png">
-<meta property="article:published_time" content="2026-04-15T13:00:00.000Z">
-<meta property="article:modified_time" content="2026-04-20T14:17:23.113Z">
+<meta property="article:published_time" content="2026-04-23T12:29:02.000Z">
+<meta property="article:modified_time" content="2026-04-23T13:13:27.207Z">
 <meta property="article:author" content="EatingLee">
-<meta property="article:tag" content="各种操作示例">
+<meta property="article:tag" content="PyYAML">
+<meta property="article:tag" content="allure">
+<meta property="article:tag" content="openpyxl">
+<meta property="article:tag" content="pymysql">
+<meta property="article:tag" content="pytest">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="requests">
+<meta property="article:tag" content="接口自动化">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://eatinglee123.github.io/images/%E5%A4%B4%E5%83%8F.jpg">
   
   
   
-  <title>各种操作示例 - EatingLee的技术博客</title>
+  <title>接口自动化框架介绍 - EatingLee的技术博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -313,7 +314,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="各种操作示例"></span>
+            <span id="subtitle" data-typed-text="接口自动化框架介绍"></span>
           
         </div>
 
@@ -324,8 +325,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-15 21:00" pubdate>
-          2026年4月15日 晚上
+        <time datetime="2026-04-23 20:29" pubdate>
+          2026年4月23日 晚上
         </time>
       </span>
     
@@ -336,7 +337,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          761 字
+          3.7k 字
         
       </span>
     
@@ -347,7 +348,7 @@
         
         
         
-          7 分钟
+          31 分钟
         
       </span>
     
@@ -386,164 +387,154 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">各种操作示例</h1>
+            <h1 id="seo-header">接口自动化框架介绍</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-标题层级"><a class="markdownIt-Anchor" href="#1-标题层级"></a> 1. 标题层级</h1>
-<h1 id="一级标题"><a class="markdownIt-Anchor" href="#一级标题"></a> 一级标题</h1>
-<h2 id="二级标题"><a class="markdownIt-Anchor" href="#二级标题"></a> 二级标题</h2>
-<h3 id="三级标题"><a class="markdownIt-Anchor" href="#三级标题"></a> 三级标题</h3>
-<h4 id="四级标题"><a class="markdownIt-Anchor" href="#四级标题"></a> 四级标题</h4>
-<h5 id="五级标题"><a class="markdownIt-Anchor" href="#五级标题"></a> 五级标题</h5>
-<h6 id="六级标题"><a class="markdownIt-Anchor" href="#六级标题"></a> 六级标题</h6>
-<hr />
-<h1 id="2-基础文字样式"><a class="markdownIt-Anchor" href="#2-基础文字样式"></a> 2. 基础文字样式</h1>
-<p>普通文本</p>
-<p><strong>粗体文本</strong><br />
-<em>斜体文本</em><br />
-<em><strong>粗斜体</strong></em><br />
-<s>删除线</s><br />
-<u>下划线</u><br />
-<mark>高亮标记</mark></p>
-<hr />
-<h1 id="3-颜色与大小"><a class="markdownIt-Anchor" href="#3-颜色与大小"></a> 3. 颜色与大小</h1>
-<p><span style="color:red">红色文字</span><br />
-<span style="color:blue">蓝色文字</span><br />
-<span style="color:green">绿色文字</span><br />
-<span style="color:orange">橙色文字</span><br />
-<span style="color:#61afef">主题色文字</span></p>
-<p><span style="font-size:18px">大号文字</span><br />
-<span style="font-size:12px">小号备注</span></p>
-<hr />
-<h1 id="4-上下标与注释"><a class="markdownIt-Anchor" href="#4-上下标与注释"></a> 4. 上下标与注释</h1>
-<p>H<sub>2</sub>O<br />
-2<sup>10</sup> = 1024<br />
-<small>小字说明内容</small></p>
-<hr />
-<h1 id="5-引用"><a class="markdownIt-Anchor" href="#5-引用"></a> 5. 引用</h1>
-<blockquote>
-<p>单行引用</p>
-</blockquote>
-<blockquote>
-<p>多行引用示例<br />
-可以自动换行<br />
-适合重点、笔记、名言</p>
-</blockquote>
-<hr />
-<h1 id="6-行内代码与关键字"><a class="markdownIt-Anchor" href="#6-行内代码与关键字"></a> 6. 行内代码与关键字</h1>
-<p>定义一个函数 <code>func()</code>，调用 <code>print()</code> 输出，使用变量 <code>count</code> 计数。</p>
-<hr />
-<h1 id="7-有序列表"><a class="markdownIt-Anchor" href="#7-有序列表"></a> 7. 有序列表</h1>
-<ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
+                <h1 id="接口自动化框架"><a href="#接口自动化框架" class="headerlink" title="接口自动化框架"></a>接口自动化框架</h1><p>基于 <code>pytest + requests + openpyxl + PyYAML + pymysql + allure</code> 的数据驱动接口自动化测试框架。</p>
+<p>框架采用 <strong>Excel 管理真实参数</strong> + <strong>YAML 管理接口模板与断言规则</strong> 的模式，执行时自动完成变量替换、接口关联和多维断言。</p>
+<h2 id="核心能力"><a href="#核心能力" class="headerlink" title="核心能力"></a>核心能力</h2><ul>
+<li>数据驱动：Excel 管理用例输入与预期，YAML 管理请求模板与断言规则。</li>
+<li>接口关联：支持通过 <code>extract</code> 自动提取响应字段并注入全局变量。</li>
+<li>统一断言：支持状态码、JSONPath、数据库行数断言，入口统一。</li>
+<li>流程编排：支持将“每行一个步骤”的 Excel 数据组装为流程场景执行。</li>
+<li>报告输出：默认输出日志，并集成 Allure 结果与 HTML 报告。</li>
+</ul>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs text">APIAutoTest<br>├─ Config                  # 配置层（环境、数据库、输出目录）<br>├─ Common                  # 工具层（变量替换、YAML读取、JSON提取、全局变量）<br>├─ Encapsulation           # 封装层（HTTP、DB、Logging）<br>├─ Testcase                # 用例层（pytest + parametrize）<br>├─ Testdata                # 数据层（Excel + Transaction YAML）<br>├─ Output                  # 输出目录（日志等）<br>├─ report<br>│  ├─ result               # Allure 原始结果<br>│  └─ html                 # Allure HTML 报告<br>├─ conftest.py<br>├─ pytest.ini<br>└─ requirements.txt<br></code></pre></td></tr></table></figure>
+
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1) 安装依赖"></a>1) 安装依赖</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pip install <span class="hljs-literal">-r</span> requirements.txt<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-运行测试"><a href="#2-运行测试" class="headerlink" title="2) 运行测试"></a>2) 运行测试</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest<br></code></pre></td></tr></table></figure>
+
+<p>默认重试策略（已配置在 <code>pytest.ini</code>）：</p>
+<ul>
+<li>失败重试 <code>5</code> 次</li>
+<li>重试间隔 <code>2</code> 秒</li>
+</ul>
+<h3 id="3-生成并查看-Allure-报告"><a href="#3-生成并查看-Allure-报告" class="headerlink" title="3) 生成并查看 Allure 报告"></a>3) 生成并查看 Allure 报告</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">allure generate report/result <span class="hljs-literal">-o</span> report/html <span class="hljs-literal">--clean</span><br>allure open report/html<br></code></pre></td></tr></table></figure>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>只运行某个测试文件：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest Testcase\test_login_api.py<br></code></pre></td></tr></table></figure>
+
+<p>按关键字筛选：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest <span class="hljs-literal">-k</span> login<br></code></pre></td></tr></table></figure>
+
+<p>临时覆盖重试策略：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest <span class="hljs-literal">-k</span> login <span class="hljs-literal">--reruns</span> <span class="hljs-number">2</span> <span class="hljs-literal">--reruns-delay</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>只运行固定三组账号参数化用例：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest Testcase\test_login_api.py <span class="hljs-literal">-k</span> test_login_fixed_three_accounts <span class="hljs-literal">-q</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="数据驱动设计"><a href="#数据驱动设计" class="headerlink" title="数据驱动设计"></a>数据驱动设计</h2><h3 id="Excel：存真实值与-YAML-路径"><a href="#Excel：存真实值与-YAML-路径" class="headerlink" title="Excel：存真实值与 YAML 路径"></a>Excel：存真实值与 YAML 路径</h3><p>示例：<code>Testdata/login_data.xlsx</code> 的 <code>login</code> sheet 字段可包含：</p>
+<ul>
+<li><code>case_name</code></li>
+<li><code>yaml_path</code></li>
+<li><code>username</code></li>
+<li><code>password</code></li>
+<li><code>expected_status</code></li>
+<li><code>db_expected_count</code></li>
+</ul>
+<h3 id="YAML：存请求模板与断言规则"><a href="#YAML：存请求模板与断言规则" class="headerlink" title="YAML：存请求模板与断言规则"></a>YAML：存请求模板与断言规则</h3><p>示例：<code>Testdata/Transaction/login.yaml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">case_name:</span> <span class="hljs-string">用户登录</span><br><span class="hljs-attr">method:</span> <span class="hljs-string">POST</span><br><span class="hljs-attr">url:</span> <span class="hljs-string">/api/login</span><br><span class="hljs-attr">headers:</span><br>  <span class="hljs-attr">Content-Type:</span> <span class="hljs-string">application/json</span><br><span class="hljs-attr">payload:</span><br>  <span class="hljs-attr">username:</span> <span class="hljs-string">$&#123;username&#125;</span><br>  <span class="hljs-attr">password:</span> <span class="hljs-string">$&#123;password&#125;</span><br><span class="hljs-attr">assert:</span><br>  <span class="hljs-attr">status_code:</span> <span class="hljs-string">$&#123;expected_status&#125;</span><br>  <span class="hljs-attr">json_path:</span> []<br>  <span class="hljs-attr">db:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">config_key:</span> <span class="hljs-string">DB_CONFIG_SCORE</span><br>    <span class="hljs-attr">sql:</span> <span class="hljs-string">&quot;SELECT *FROM test.scores WHERE name = &#x27;张三&#x27;&quot;</span><br>    <span class="hljs-attr">expected_count:</span> <span class="hljs-string">$&#123;db_expected_count&#125;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="变量替换规则"><a href="#变量替换规则" class="headerlink" title="变量替换规则"></a>变量替换规则</h3><p>YAML 中 <code>${username}</code>、<code>${password}</code>、<code>${expected_status}</code> 等占位符，会在执行时由 Excel 当前行真实值替换。</p>
+<h2 id="接口关联机制"><a href="#接口关联机制" class="headerlink" title="接口关联机制"></a>接口关联机制</h2><h3 id="1-在-YAML-声明提取规则"><a href="#1-在-YAML-声明提取规则" class="headerlink" title="1) 在 YAML 声明提取规则"></a>1) 在 YAML 声明提取规则</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">extract:</span><br>  <span class="hljs-attr">accept_order_id:</span> <span class="hljs-string">$.data.orderId</span><br></code></pre></td></tr></table></figure>
+
+<p>表示从当前响应提取 <code>$.data.orderId</code>，写入全局变量 <code>accept_order_id</code>。</p>
+<h3 id="2-在下游接口直接使用"><a href="#2-在下游接口直接使用" class="headerlink" title="2) 在下游接口直接使用"></a>2) 在下游接口直接使用</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">orderId:</span> <span class="hljs-string">$&#123;accept_order_id&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>执行时自动从 <code>GlobalData</code> 注入最新值。</p>
+<h3 id="3-全局变量存储"><a href="#3-全局变量存储" class="headerlink" title="3) 全局变量存储"></a>3) 全局变量存储</h3><ul>
+<li>文件：<code>Common/global_data.py</code></li>
+<li>类名：<code>GlobalData</code></li>
+<li>用途：跨步骤共享 <code>orderId/token/policyNo</code> 等动态数据</li>
+</ul>
+<h2 id="断言能力"><a href="#断言能力" class="headerlink" title="断言能力"></a>断言能力</h2><p>支持以下断言类型：</p>
+<ul>
+<li><code>status_code</code>：HTTP 状态码断言（必填）</li>
+<li><code>json_path</code>：响应体字段断言（可选，支持多条）</li>
+<li><code>db</code>：数据库行数断言（可选，<code>enabled: true</code> 时执行）</li>
+</ul>
+<p>统一断言封装位于 <code>Common/assertions.py</code>：</p>
+<ul>
+<li><code>assert_response_by_rule(response, assert_rule, expected_status=None)</code></li>
+<li><code>safe_response_json(response, default=None)</code></li>
+</ul>
+<p>当前 <code>Testcase/test_login_api.py</code>、<code>Testcase/test_mcp_three_api_flow.py</code> 已接入。</p>
+<h2 id="MCP-流程数据封装"><a href="#MCP-流程数据封装" class="headerlink" title="MCP 流程数据封装"></a>MCP 流程数据封装</h2><p><code>Common/utils.py</code> 提供：</p>
+<ul>
+<li><code>build_flow_cases(excel_rows, scenario_key=&quot;scenario_id&quot;, step_key=&quot;step_no&quot;)</code></li>
+</ul>
+<p>可将 Excel 的平铺步骤数据组装为按步骤排序的流程场景结构，减少流程用例重复代码。</p>
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><p>配置文件：<code>Config/settings.py</code></p>
+<ul>
+<li><code>ENV_CONFIG.base_url</code>：接口环境地址</li>
+<li><code>ENV_CONFIG.mcp_base_url</code>：MCP 接口环境地址</li>
+<li><code>DB_CONFIG</code>：数据库连接信息</li>
+<li><code>DB_CONFIG_SCORE</code>：成绩校验数据库连接</li>
+<li><code>ALLURE_RESULT_DIR</code>：Allure 结果目录（<code>report/result</code>）</li>
+<li><code>ALLURE_HTML_DIR</code>：Allure HTML 目录（<code>report/html</code>）</li>
+</ul>
+<p>默认重试参数在 <code>pytest.ini</code> 的 <code>addopts</code> 中：</p>
+<ul>
+<li><code>--reruns 5 --reruns-delay 2</code></li>
+</ul>
+<h2 id="conftest-py-作用"><a href="#conftest-py-作用" class="headerlink" title="conftest.py 作用"></a><code>conftest.py</code> 作用</h2><p><code>conftest.py</code> 是 pytest 全局扩展入口，会被自动发现并加载。</p>
+<p>本项目中主要负责：</p>
+<ul>
+<li><code>pytest_sessionstart</code>：创建输出目录、清理 <code>report/result</code>、写入环境信息、记录启动日志</li>
+<li><code>pytest_sessionfinish</code>：记录结束日志、提示报告路径与查看命令</li>
+<li><code>setup_and_teardown (autouse=True)</code>：每条用例自动前后置，失败时附加错误信息到 Allure</li>
+</ul>
+<p>可简单理解为：</p>
+<ul>
+<li><code>Testcase/test_*.py</code> 负责测试逻辑</li>
+<li><code>conftest.py</code> 负责全局生命周期和公共初始化</li>
+</ul>
+<h2 id="团队规范（推荐）"><a href="#团队规范（推荐）" class="headerlink" title="团队规范（推荐）"></a>团队规范（推荐）</h2><h3 id="1-YAML-命名规范"><a href="#1-YAML-命名规范" class="headerlink" title="1) YAML 命名规范"></a>1) YAML 命名规范</h3><ul>
+<li>每个接口一个 YAML，放在 <code>Testdata/Transaction</code></li>
+<li>文件名建议 <code>模块_接口_场景.yaml</code>，如 <code>user_login_success.yaml</code></li>
+<li>统一小写下划线，禁止中文文件名与空格</li>
+</ul>
+<h3 id="2-Excel-字段规范"><a href="#2-Excel-字段规范" class="headerlink" title="2) Excel 字段规范"></a>2) Excel 字段规范</h3><ul>
+<li>一个业务模块一个 Excel，例如 <code>login_data.xlsx</code></li>
+<li>一个 sheet 对应一组同类型场景</li>
+<li>必填列：<code>case_name</code>、<code>yaml_path</code></li>
+<li>建议列：<code>${变量}</code> 对应真实值列和预期结果列（如 <code>expected_status</code>）</li>
+<li><code>yaml_path</code> 使用相对项目根路径，如 <code>Testdata/Transaction/login.yaml</code></li>
+</ul>
+<h3 id="3-YAML-字段规范"><a href="#3-YAML-字段规范" class="headerlink" title="3) YAML 字段规范"></a>3) YAML 字段规范</h3><ul>
+<li>建议固定结构：<code>case_name</code>、<code>method</code>、<code>url</code>、<code>headers</code>、<code>payload</code>、<code>assert</code></li>
+<li><code>payload</code> 动态值统一使用 <code>${变量名}</code>，且需在 Excel 中存在同名列</li>
+<li><code>assert.status_code</code> 必填</li>
+<li><code>assert.json_path</code>、<code>assert.db</code> 可选，不需要时写空列表或 <code>enabled: false</code></li>
+</ul>
+<h3 id="4-断言编写规范"><a href="#4-断言编写规范" class="headerlink" title="4) 断言编写规范"></a>4) 断言编写规范</h3><ul>
+<li>每个用例优先保证 <code>status_code</code> 断言</li>
+<li>JSONPath 建议使用 <code>$.a.b[0].c</code> 风格</li>
+<li>数据库断言默认 <code>enabled: false</code>，启用时 SQL 需可重复执行且结果稳定</li>
+<li>单用例关键断言建议不超过 5 条，便于排障</li>
+</ul>
+<h3 id="5-新增用例流程"><a href="#5-新增用例流程" class="headerlink" title="5) 新增用例流程"></a>5) 新增用例流程</h3><ol>
+<li>在 <code>Testdata/Transaction</code> 新建接口 YAML 模板</li>
+<li>在 Excel 对应 sheet 增加一行用例数据</li>
+<li>执行 <code>pytest -k 关键字</code> 本地验证</li>
+<li>生成 Allure 报告并确认展示正常</li>
 </ol>
-<hr />
-<h1 id="8-无序列表"><a class="markdownIt-Anchor" href="#8-无序列表"></a> 8. 无序列表</h1>
+<h2 id="日志与依赖"><a href="#日志与依赖" class="headerlink" title="日志与依赖"></a>日志与依赖</h2><p>日志格式：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">%(asctime)s - %(levelname)s - %(message)s<br></code></pre></td></tr></table></figure>
+
+<p>依赖清单见 <code>requirements.txt</code>，核心依赖包括：</p>
 <ul>
-<li>一级项目
-<ul>
-<li>二级子项目</li>
-<li>二级子项目</li>
+<li>pytest</li>
+<li>pytest-rerunfailures</li>
+<li>requests</li>
+<li>openpyxl</li>
+<li>pymysql</li>
+<li>allure-pytest</li>
+<li>PyYAML</li>
 </ul>
-</li>
-<li>一级项目</li>
-</ul>
-<hr />
-<h1 id="9-任务列表待办"><a class="markdownIt-Anchor" href="#9-任务列表待办"></a> 9. 任务列表（待办）</h1>
-<ul>
-<li>[x] 已完成任务</li>
-<li>[ ] 未完成任务</li>
-<li>[ ] 待规划事项</li>
-</ul>
-<hr />
-<h1 id="10-表格"><a class="markdownIt-Anchor" href="#10-表格"></a> 10. 表格</h1>
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>年龄</th>
-<th>职业</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>张三</td>
-<td>25</td>
-<td>工程师</td>
-</tr>
-<tr>
-<td>李四</td>
-<td>28</td>
-<td>设计师</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="11-分割线"><a class="markdownIt-Anchor" href="#11-分割线"></a> 11. 分割线</h1>
-<hr />
-<hr />
-<h1 id="12-文字对齐"><a class="markdownIt-Anchor" href="#12-文字对齐"></a> 12. 文字对齐</h1>
-<center>居中对齐</center>
-<p align="right">右对齐</p>
-<hr />
-<h1 id="13-fluid-主题提示框原生支持"><a class="markdownIt-Anchor" href="#13-fluid-主题提示框原生支持"></a> 13. Fluid 主题提示框（原生支持）</h1>
-<div class="note note-info">
-            <p>普通信息提示</p> 
-          </div>
-<div class="note note-primary">
-            <p>主要内容提示</p> 
-          </div>
-<div class="note note-success">
-            <p>成功/完成提示</p> 
-          </div>
-<div class="note note-warning">
-            <p>警告/注意提示</p> 
-          </div>
-<div class="note note-danger">
-            <p>错误/危险提示</p> 
-          </div>
-<hr />
-<h1 id="14-代码块"><a class="markdownIt-Anchor" href="#14-代码块"></a> 14. 代码块</h1>
-<h2 id="python"><a class="markdownIt-Anchor" href="#python"></a> python</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>():<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello Hexo Fluid&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h2 id="java"><a class="markdownIt-Anchor" href="#java"></a> java</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;Hello&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<hr />
-<h1 id="15-数学公式"><a class="markdownIt-Anchor" href="#15-数学公式"></a> 15. 数学公式</h1>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">
-E=mc^2
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord mathnormal">m</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>i</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">
-\sum_{i=1}^n i = \frac{n(n+1)}{2}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.9291em;vertical-align:-1.2777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6514em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
-<hr />
-<h1 id="16-思维导图"><a class="markdownIt-Anchor" href="#16-思维导图"></a> 16. 思维导图</h1>
-<pre><code class=" mermaid">graph TD
-    A[Markdown] --&gt; B[标题]
-    A --&gt; C[文字]
-    A --&gt; D[列表]
-    A --&gt; E[代码]
-    A --&gt; F[公式]
-</code></pre>
-<hr />
-<h1 id="17-插入图片"><a class="markdownIt-Anchor" href="#17-插入图片"></a> 17. 插入图片</h1>
-<h2 id="基础普通插入双向兼容"><a class="markdownIt-Anchor" href="#基础普通插入双向兼容"></a> 基础普通插入（双向兼容）</h2>
-<p><img src="/images/%E5%A4%B4%E5%83%8F.jpg" srcset="/img/loading.gif" lazyload alt="示例头像" /></p>
-<h2 id="居中-70-宽度推荐"><a class="markdownIt-Anchor" href="#居中-70-宽度推荐"></a> 居中 + 70% 宽度（推荐）</h2>
-<center>
-<img src="/images/头像.jpg" srcset="/img/loading.gif" lazyload width="70%" alt="头像图片">
-</center>
-<h2 id="进阶美化版圆角-阴影"><a class="markdownIt-Anchor" href="#进阶美化版圆角-阴影"></a> 进阶美化版（圆角 + 阴影）</h2>
-<center>
-<img src="/images/头像.jpg" srcset="/img/loading.gif" lazyload width="70%" alt="头像图片" style="border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.2);">
-</center>
-<h2 id="粘贴图片"><a class="markdownIt-Anchor" href="#粘贴图片"></a> 粘贴图片</h2>
-<p><img src="/images/image-20260420215220286.png" srcset="/img/loading.gif" lazyload alt="粘贴图片" /></p>
-<p><img src="/images/image-20260420221713250.png" srcset="/img/loading.gif" lazyload alt="image-20260420221713250" /></p>
 
                 
               </div>
@@ -562,8 +553,15 @@ E=mc^2
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B/" class="category-chain-item">各种操作示例</a>
+  <a href="/categories/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96/" class="category-chain-item">接口自动化</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96/python/" class="category-chain-item">python</a>
+  
+  
+
   
 
       </span>
@@ -577,7 +575,21 @@ E=mc^2
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%90%84%E7%A7%8D%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B/" class="print-no-link">#各种操作示例</a>
+        <a href="/tags/python/" class="print-no-link">#python</a>
+      
+        <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96/" class="print-no-link">#接口自动化</a>
+      
+        <a href="/tags/pytest/" class="print-no-link">#pytest</a>
+      
+        <a href="/tags/requests/" class="print-no-link">#requests</a>
+      
+        <a href="/tags/openpyxl/" class="print-no-link">#openpyxl</a>
+      
+        <a href="/tags/PyYAML/" class="print-no-link">#PyYAML</a>
+      
+        <a href="/tags/pymysql/" class="print-no-link">#pymysql</a>
+      
+        <a href="/tags/allure/" class="print-no-link">#allure</a>
       
     </div>
   
@@ -591,9 +603,9 @@ E=mc^2
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/19/Counter/" title="Counter模块">
+                      <a href="/2026/04/23/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96Common%E5%B7%A5%E5%85%B7%E5%B1%82/" title="接口自动化Common工具层">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Counter模块</span>
+                        <span class="hidden-mobile">接口自动化Common工具层</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -601,8 +613,8 @@ E=mc^2
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/04/15/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2026/04/19/Counter/" title="Counter模块">
+                        <span class="hidden-mobile">Counter模块</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
