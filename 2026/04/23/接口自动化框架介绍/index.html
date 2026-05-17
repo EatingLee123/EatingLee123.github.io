@@ -19,15 +19,15 @@
   <meta name="author" content="EatingLee">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基于 &#96;pytest + requests + openpyxl + PyYAML + pymysql + allure&#96; 的数据驱动接口自动化测试框架">
+    <meta name="description" content="基于pytest + requests + openpyxl + PyYAML + pymysql + allure的数据驱动接口自动化测试框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="接口自动化框架介绍">
 <meta property="og:url" content="https://eatinglee123.github.io/2026/04/23/%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="EatingLee的技术博客">
-<meta property="og:description" content="基于 &#96;pytest + requests + openpyxl + PyYAML + pymysql + allure&#96; 的数据驱动接口自动化测试框架">
+<meta property="og:description" content="基于pytest + requests + openpyxl + PyYAML + pymysql + allure的数据驱动接口自动化测试框架">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-23T12:29:02.000Z">
-<meta property="article:modified_time" content="2026-04-23T13:13:27.207Z">
+<meta property="article:modified_time" content="2026-05-17T03:58:01.743Z">
 <meta property="article:author" content="EatingLee">
 <meta property="article:tag" content="PyYAML">
 <meta property="article:tag" content="allure">
@@ -392,43 +392,41 @@
             
               <div class="markdown-body">
                 
-                <h1 id="接口自动化框架">接口自动化框架</h1>
-<p>基于 <code>pytest + requests + openpyxl + PyYAML + pymysql + allure</code> 的数据驱动接口自动化测试框架。</p>
+                <h1 id="接口自动化框架"><a href="#接口自动化框架" class="headerlink" title="接口自动化框架"></a>接口自动化框架</h1><p>基于 <code>pytest + requests + openpyxl + PyYAML + pymysql + allure</code> 的数据驱动接口自动化测试框架。</p>
 <p>框架采用 <strong>Excel 管理真实参数</strong> + <strong>YAML 管理接口模板与断言规则</strong> 的模式，执行时自动完成变量替换、接口关联和多维断言。</p>
-<h2 id="核心能力">核心能力</h2>
-<ul>
+<h2 id="核心能力"><a href="#核心能力" class="headerlink" title="核心能力"></a>核心能力</h2><ul>
 <li>数据驱动：Excel 管理用例输入与预期，YAML 管理请求模板与断言规则。</li>
 <li>接口关联：支持通过 <code>extract</code> 自动提取响应字段并注入全局变量。</li>
 <li>统一断言：支持状态码、JSONPath、数据库行数断言，入口统一。</li>
 <li>流程编排：支持将“每行一个步骤”的 Excel 数据组装为流程场景执行。</li>
 <li>报告输出：默认输出日志，并集成 Allure 结果与 HTML 报告。</li>
 </ul>
-<h2 id="目录结构">目录结构</h2>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs text">APIAutoTest<br>├─ Config                  # 配置层（环境、数据库、输出目录）<br>├─ Common                  # 工具层（变量替换、YAML读取、JSON提取、全局变量）<br>├─ Encapsulation           # 封装层（HTTP、DB、Logging）<br>├─ Testcase                # 用例层（pytest + parametrize）<br>├─ Testdata                # 数据层（Excel + Transaction YAML）<br>├─ Output                  # 输出目录（日志等）<br>├─ report<br>│  ├─ result               # Allure 原始结果<br>│  └─ html                 # Allure HTML 报告<br>├─ conftest.py<br>├─ pytest.ini<br>└─ requirements.txt<br></code></pre></td></tr></table></figure>
-<h2 id="快速开始">快速开始</h2>
-<h3 id="1-安装依赖">1) 安装依赖</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pip install <span class="hljs-literal">-r</span> requirements.txt<br></code></pre></td></tr></table></figure>
-<h3 id="2-运行测试">2) 运行测试</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest<br></code></pre></td></tr></table></figure>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs text">APIAutoTest<br>├─ Config                  # 配置层（环境、数据库、输出目录）<br>├─ Common                  # 工具层（变量替换、YAML读取、JSON提取、全局变量）<br>├─ Encapsulation           # 封装层（HTTP、DB、Logging）<br>├─ Testcase                # 用例层（pytest + parametrize）<br>├─ Testdata                # 数据层（Excel + Transaction YAML）<br>├─ Output                  # 输出目录（日志等）<br>├─ report<br>│  ├─ result               # Allure 原始结果<br>│  └─ html                 # Allure HTML 报告<br>├─ conftest.py<br>├─ pytest.ini<br>└─ requirements.txt<br></code></pre></td></tr></table></figure>
+
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1) 安装依赖"></a>1) 安装依赖</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pip install <span class="hljs-literal">-r</span> requirements.txt<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-运行测试"><a href="#2-运行测试" class="headerlink" title="2) 运行测试"></a>2) 运行测试</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest<br></code></pre></td></tr></table></figure>
+
 <p>默认重试策略（已配置在 <code>pytest.ini</code>）：</p>
 <ul>
 <li>失败重试 <code>5</code> 次</li>
 <li>重试间隔 <code>2</code> 秒</li>
 </ul>
-<h3 id="3-生成并查看-Allure-报告">3) 生成并查看 Allure 报告</h3>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">allure generate report/result <span class="hljs-literal">-o</span> report/html <span class="hljs-literal">--clean</span><br>allure open report/html<br></code></pre></td></tr></table></figure>
-<h2 id="常用命令">常用命令</h2>
-<p>只运行某个测试文件：</p>
+<h3 id="3-生成并查看-Allure-报告"><a href="#3-生成并查看-Allure-报告" class="headerlink" title="3) 生成并查看 Allure 报告"></a>3) 生成并查看 Allure 报告</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">allure generate report/result <span class="hljs-literal">-o</span> report/html <span class="hljs-literal">--clean</span><br>allure open report/html<br></code></pre></td></tr></table></figure>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>只运行某个测试文件：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest Testcase\test_login_api.py<br></code></pre></td></tr></table></figure>
+
 <p>按关键字筛选：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest <span class="hljs-literal">-k</span> login<br></code></pre></td></tr></table></figure>
+
 <p>临时覆盖重试策略：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest <span class="hljs-literal">-k</span> login <span class="hljs-literal">--reruns</span> <span class="hljs-number">2</span> <span class="hljs-literal">--reruns-delay</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
 <p>只运行固定三组账号参数化用例：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">pytest Testcase\test_login_api.py <span class="hljs-literal">-k</span> test_login_fixed_three_accounts <span class="hljs-literal">-q</span><br></code></pre></td></tr></table></figure>
-<h2 id="数据驱动设计">数据驱动设计</h2>
-<h3 id="Excel：存真实值与-YAML-路径">Excel：存真实值与 YAML 路径</h3>
-<p>示例：<code>Testdata/login_data.xlsx</code> 的 <code>login</code> sheet 字段可包含：</p>
+
+<h2 id="数据驱动设计"><a href="#数据驱动设计" class="headerlink" title="数据驱动设计"></a>数据驱动设计</h2><h3 id="Excel：存真实值与-YAML-路径"><a href="#Excel：存真实值与-YAML-路径" class="headerlink" title="Excel：存真实值与 YAML 路径"></a>Excel：存真实值与 YAML 路径</h3><p>示例：<code>Testdata/login_data.xlsx</code> 的 <code>login</code> sheet 字段可包含：</p>
 <ul>
 <li><code>case_name</code></li>
 <li><code>yaml_path</code></li>
@@ -437,26 +435,22 @@
 <li><code>expected_status</code></li>
 <li><code>db_expected_count</code></li>
 </ul>
-<h3 id="YAML：存请求模板与断言规则">YAML：存请求模板与断言规则</h3>
-<p>示例：<code>Testdata/Transaction/login.yaml</code></p>
+<h3 id="YAML：存请求模板与断言规则"><a href="#YAML：存请求模板与断言规则" class="headerlink" title="YAML：存请求模板与断言规则"></a>YAML：存请求模板与断言规则</h3><p>示例：<code>Testdata/Transaction/login.yaml</code></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">case_name:</span> <span class="hljs-string">用户登录</span><br><span class="hljs-attr">method:</span> <span class="hljs-string">POST</span><br><span class="hljs-attr">url:</span> <span class="hljs-string">/api/login</span><br><span class="hljs-attr">headers:</span><br>  <span class="hljs-attr">Content-Type:</span> <span class="hljs-string">application/json</span><br><span class="hljs-attr">payload:</span><br>  <span class="hljs-attr">username:</span> <span class="hljs-string">$&#123;username&#125;</span><br>  <span class="hljs-attr">password:</span> <span class="hljs-string">$&#123;password&#125;</span><br><span class="hljs-attr">assert:</span><br>  <span class="hljs-attr">status_code:</span> <span class="hljs-string">$&#123;expected_status&#125;</span><br>  <span class="hljs-attr">json_path:</span> []<br>  <span class="hljs-attr">db:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">config_key:</span> <span class="hljs-string">DB_CONFIG_SCORE</span><br>    <span class="hljs-attr">sql:</span> <span class="hljs-string">&quot;SELECT *FROM test.scores WHERE name = &#x27;张三&#x27;&quot;</span><br>    <span class="hljs-attr">expected_count:</span> <span class="hljs-string">$&#123;db_expected_count&#125;</span><br></code></pre></td></tr></table></figure>
-<h3 id="变量替换规则">变量替换规则</h3>
-<p>YAML 中 <code>${username}</code>、<code>${password}</code>、<code>${expected_status}</code> 等占位符，会在执行时由 Excel 当前行真实值替换。</p>
-<h2 id="接口关联机制">接口关联机制</h2>
-<h3 id="1-在-YAML-声明提取规则">1) 在 YAML 声明提取规则</h3>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">extract:</span><br>  <span class="hljs-attr">accept_order_id:</span> <span class="hljs-string">$.data.orderId</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="变量替换规则"><a href="#变量替换规则" class="headerlink" title="变量替换规则"></a>变量替换规则</h3><p>YAML 中 <code>${username}</code>、<code>${password}</code>、<code>${expected_status}</code> 等占位符，会在执行时由 Excel 当前行真实值替换。</p>
+<h2 id="接口关联机制"><a href="#接口关联机制" class="headerlink" title="接口关联机制"></a>接口关联机制</h2><h3 id="1-在-YAML-声明提取规则"><a href="#1-在-YAML-声明提取规则" class="headerlink" title="1) 在 YAML 声明提取规则"></a>1) 在 YAML 声明提取规则</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">extract:</span><br>  <span class="hljs-attr">accept_order_id:</span> <span class="hljs-string">$.data.orderId</span><br></code></pre></td></tr></table></figure>
+
 <p>表示从当前响应提取 <code>$.data.orderId</code>，写入全局变量 <code>accept_order_id</code>。</p>
-<h3 id="2-在下游接口直接使用">2) 在下游接口直接使用</h3>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">orderId:</span> <span class="hljs-string">$&#123;accept_order_id&#125;</span><br></code></pre></td></tr></table></figure>
+<h3 id="2-在下游接口直接使用"><a href="#2-在下游接口直接使用" class="headerlink" title="2) 在下游接口直接使用"></a>2) 在下游接口直接使用</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">orderId:</span> <span class="hljs-string">$&#123;accept_order_id&#125;</span><br></code></pre></td></tr></table></figure>
+
 <p>执行时自动从 <code>GlobalData</code> 注入最新值。</p>
-<h3 id="3-全局变量存储">3) 全局变量存储</h3>
-<ul>
+<h3 id="3-全局变量存储"><a href="#3-全局变量存储" class="headerlink" title="3) 全局变量存储"></a>3) 全局变量存储</h3><ul>
 <li>文件：<code>Common/global_data.py</code></li>
 <li>类名：<code>GlobalData</code></li>
 <li>用途：跨步骤共享 <code>orderId/token/policyNo</code> 等动态数据</li>
 </ul>
-<h2 id="断言能力">断言能力</h2>
-<p>支持以下断言类型：</p>
+<h2 id="断言能力"><a href="#断言能力" class="headerlink" title="断言能力"></a>断言能力</h2><p>支持以下断言类型：</p>
 <ul>
 <li><code>status_code</code>：HTTP 状态码断言（必填）</li>
 <li><code>json_path</code>：响应体字段断言（可选，支持多条）</li>
@@ -468,14 +462,12 @@
 <li><code>safe_response_json(response, default=None)</code></li>
 </ul>
 <p>当前 <code>Testcase/test_login_api.py</code>、<code>Testcase/test_mcp_three_api_flow.py</code> 已接入。</p>
-<h2 id="MCP-流程数据封装">MCP 流程数据封装</h2>
-<p><code>Common/utils.py</code> 提供：</p>
+<h2 id="MCP-流程数据封装"><a href="#MCP-流程数据封装" class="headerlink" title="MCP 流程数据封装"></a>MCP 流程数据封装</h2><p><code>Common/utils.py</code> 提供：</p>
 <ul>
 <li><code>build_flow_cases(excel_rows, scenario_key=&quot;scenario_id&quot;, step_key=&quot;step_no&quot;)</code></li>
 </ul>
 <p>可将 Excel 的平铺步骤数据组装为按步骤排序的流程场景结构，减少流程用例重复代码。</p>
-<h2 id="配置说明">配置说明</h2>
-<p>配置文件：<code>Config/settings.py</code></p>
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><p>配置文件：<code>Config/settings.py</code></p>
 <ul>
 <li><code>ENV_CONFIG.base_url</code>：接口环境地址</li>
 <li><code>ENV_CONFIG.mcp_base_url</code>：MCP 接口环境地址</li>
@@ -488,8 +480,7 @@
 <ul>
 <li><code>--reruns 5 --reruns-delay 2</code></li>
 </ul>
-<h2 id="conftest-py-作用"><code>conftest.py</code> 作用</h2>
-<p><code>conftest.py</code> 是 pytest 全局扩展入口，会被自动发现并加载。</p>
+<h2 id="conftest-py-作用"><a href="#conftest-py-作用" class="headerlink" title="conftest.py 作用"></a><code>conftest.py</code> 作用</h2><p><code>conftest.py</code> 是 pytest 全局扩展入口，会被自动发现并加载。</p>
 <p>本项目中主要负责：</p>
 <ul>
 <li><code>pytest_sessionstart</code>：创建输出目录、清理 <code>report/result</code>、写入环境信息、记录启动日志</li>
@@ -501,45 +492,39 @@
 <li><code>Testcase/test_*.py</code> 负责测试逻辑</li>
 <li><code>conftest.py</code> 负责全局生命周期和公共初始化</li>
 </ul>
-<h2 id="团队规范（推荐）">团队规范（推荐）</h2>
-<h3 id="1-YAML-命名规范">1) YAML 命名规范</h3>
-<ul>
+<h2 id="团队规范（推荐）"><a href="#团队规范（推荐）" class="headerlink" title="团队规范（推荐）"></a>团队规范（推荐）</h2><h3 id="1-YAML-命名规范"><a href="#1-YAML-命名规范" class="headerlink" title="1) YAML 命名规范"></a>1) YAML 命名规范</h3><ul>
 <li>每个接口一个 YAML，放在 <code>Testdata/Transaction</code></li>
 <li>文件名建议 <code>模块_接口_场景.yaml</code>，如 <code>user_login_success.yaml</code></li>
 <li>统一小写下划线，禁止中文文件名与空格</li>
 </ul>
-<h3 id="2-Excel-字段规范">2) Excel 字段规范</h3>
-<ul>
+<h3 id="2-Excel-字段规范"><a href="#2-Excel-字段规范" class="headerlink" title="2) Excel 字段规范"></a>2) Excel 字段规范</h3><ul>
 <li>一个业务模块一个 Excel，例如 <code>login_data.xlsx</code></li>
 <li>一个 sheet 对应一组同类型场景</li>
 <li>必填列：<code>case_name</code>、<code>yaml_path</code></li>
 <li>建议列：<code>${变量}</code> 对应真实值列和预期结果列（如 <code>expected_status</code>）</li>
 <li><code>yaml_path</code> 使用相对项目根路径，如 <code>Testdata/Transaction/login.yaml</code></li>
 </ul>
-<h3 id="3-YAML-字段规范">3) YAML 字段规范</h3>
-<ul>
+<h3 id="3-YAML-字段规范"><a href="#3-YAML-字段规范" class="headerlink" title="3) YAML 字段规范"></a>3) YAML 字段规范</h3><ul>
 <li>建议固定结构：<code>case_name</code>、<code>method</code>、<code>url</code>、<code>headers</code>、<code>payload</code>、<code>assert</code></li>
 <li><code>payload</code> 动态值统一使用 <code>${变量名}</code>，且需在 Excel 中存在同名列</li>
 <li><code>assert.status_code</code> 必填</li>
 <li><code>assert.json_path</code>、<code>assert.db</code> 可选，不需要时写空列表或 <code>enabled: false</code></li>
 </ul>
-<h3 id="4-断言编写规范">4) 断言编写规范</h3>
-<ul>
+<h3 id="4-断言编写规范"><a href="#4-断言编写规范" class="headerlink" title="4) 断言编写规范"></a>4) 断言编写规范</h3><ul>
 <li>每个用例优先保证 <code>status_code</code> 断言</li>
 <li>JSONPath 建议使用 <code>$.a.b[0].c</code> 风格</li>
 <li>数据库断言默认 <code>enabled: false</code>，启用时 SQL 需可重复执行且结果稳定</li>
 <li>单用例关键断言建议不超过 5 条，便于排障</li>
 </ul>
-<h3 id="5-新增用例流程">5) 新增用例流程</h3>
-<ol>
+<h3 id="5-新增用例流程"><a href="#5-新增用例流程" class="headerlink" title="5) 新增用例流程"></a>5) 新增用例流程</h3><ol>
 <li>在 <code>Testdata/Transaction</code> 新建接口 YAML 模板</li>
 <li>在 Excel 对应 sheet 增加一行用例数据</li>
 <li>执行 <code>pytest -k 关键字</code> 本地验证</li>
 <li>生成 Allure 报告并确认展示正常</li>
 </ol>
-<h2 id="日志与依赖">日志与依赖</h2>
-<p>日志格式：</p>
+<h2 id="日志与依赖"><a href="#日志与依赖" class="headerlink" title="日志与依赖"></a>日志与依赖</h2><p>日志格式：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">%(asctime)s - %(levelname)s - %(message)s<br></code></pre></td></tr></table></figure>
+
 <p>依赖清单见 <code>requirements.txt</code>，核心依赖包括：</p>
 <ul>
 <li>pytest</li>
