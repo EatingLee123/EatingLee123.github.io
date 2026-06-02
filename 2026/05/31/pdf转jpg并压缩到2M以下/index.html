@@ -385,19 +385,19 @@
             
               <div class="markdown-body">
                 
-                <h1 id="一、源码">一、源码</h1>
+                <h1 id="一-源码"><a class="markdownIt-Anchor" href="#一-源码"></a> 一、源码</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span><br><span class="hljs-keyword">import</span> fitz<br><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">compress_image</span>(<span class="hljs-params">img_path, out_path, target_size=<span class="hljs-number">2</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span></span>):<br>    quality = <span class="hljs-number">80</span><br>    <span class="hljs-keyword">while</span> quality &gt; <span class="hljs-number">5</span>:<br>        <span class="hljs-keyword">with</span> Image.<span class="hljs-built_in">open</span>(img_path) <span class="hljs-keyword">as</span> img:<br>            <span class="hljs-keyword">if</span> img.mode <span class="hljs-keyword">in</span> (<span class="hljs-string">&quot;RGBA&quot;</span>, <span class="hljs-string">&quot;P&quot;</span>):<br>                img = img.convert(<span class="hljs-string">&quot;RGB&quot;</span>)<br>            img.save(out_path, <span class="hljs-string">&quot;JPEG&quot;</span>, quality=quality, optimize=<span class="hljs-literal">True</span>)<br><br>        <span class="hljs-keyword">if</span> os.path.getsize(out_path) &lt; target_size:<br>            <span class="hljs-keyword">break</span><br>        quality -= <span class="hljs-number">5</span><br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">pdf_to_jpg_under_2mb</span>(<span class="hljs-params">pdf_path, output_folder</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    :param pdf_path: PDF 文件路径</span><br><span class="hljs-string">    :param output_folder: 自定义输出文件夹路径</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(output_folder):<br>        os.makedirs(output_folder)<br><br>    pdf = fitz.<span class="hljs-built_in">open</span>(pdf_path)<br>    total = <span class="hljs-built_in">len</span>(pdf)<br><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(total):<br>        page = pdf[i]<br>        pix = page.get_pixmap(matrix=fitz.Matrix(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>))<br>        temp_png = os.path.join(output_folder, <span class="hljs-string">f&quot;temp_<span class="hljs-subst">&#123;i + <span class="hljs-number">1</span>&#125;</span>.png&quot;</span>)<br>        final_jpg = os.path.join(output_folder, <span class="hljs-string">f&quot;page_<span class="hljs-subst">&#123;i + <span class="hljs-number">1</span>&#125;</span>.jpg&quot;</span>)<br><br>        pix.save(temp_png)<br>        compress_image(temp_png, final_jpg)<br>        os.remove(temp_png)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;✅ 第 <span class="hljs-subst">&#123;i + <span class="hljs-number">1</span>&#125;</span> 页完成：<span class="hljs-subst">&#123;final_jpg&#125;</span>&quot;</span>)<br><br>    pdf.close()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\n🎉 全部转换完成！所有图片均 &lt; 2MB&quot;</span>)<br><br><br><span class="hljs-comment"># ===================== 【在这里配置你的路径】 =====================</span><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    <span class="hljs-comment"># 1. 你的 PDF 路径</span><br>    YOUR_PDF = <span class="hljs-string">r&quot;*.pdf&quot;</span><br><br>    <span class="hljs-comment"># 2. 自定义输出目录（想保存到哪就填哪）</span><br>    OUTPUT_FOLDER = <span class="hljs-string">r&quot;*\压缩后的图片&quot;</span><br><br>    <span class="hljs-comment"># 执行</span><br>    pdf_to_jpg_under_2mb(YOUR_PDF, OUTPUT_FOLDER)<br><br></code></pre></td></tr></table></figure>
-<h1 id="二、代码讲解">二、代码讲解</h1>
+<h1 id="二-代码讲解"><a class="markdownIt-Anchor" href="#二-代码讲解"></a> 二、代码讲解</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span><br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：告诉Python使用UTF-8编码，<strong>支持中文路径、中文文件名不乱码</strong>。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> fitz<br><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：导入3个工具包</p>
 <ul>
 <li><code>fitz</code>：<strong>PDF转图片</strong>（PyMuPDF）</li>
 <li><code>PIL.Image</code>：<strong>压缩图片、修改质量</strong></li>
 </ul>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">compress_image</span>(<span class="hljs-params">img_path, out_path, target_size=<span class="hljs-number">2</span> * <span class="hljs-number">1024</span> * <span class="hljs-number">1024</span></span>):<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：定义一个<strong>自动压缩图片函数</strong></p>
 <ul>
@@ -405,24 +405,24 @@
 <li><code>out_path</code>：输出图片路径</li>
 <li><code>target_size=2MB</code>：目标大小 <strong>小于2MB</strong></li>
 </ul>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">quality = <span class="hljs-number">80</span><br><span class="hljs-keyword">while</span> quality &gt; <span class="hljs-number">5</span>:<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：</p>
 <ul>
 <li>初始画质 80（较高清）</li>
 <li><code>while</code> 循环：<strong>一直压缩，直到小于2MB或画质最低5</strong></li>
 </ul>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> Image.<span class="hljs-built_in">open</span>(img_path) <span class="hljs-keyword">as</span> img:<br>    <span class="hljs-keyword">if</span> img.mode <span class="hljs-keyword">in</span> (<span class="hljs-string">&quot;RGBA&quot;</span>, <span class="hljs-string">&quot;P&quot;</span>):<br>        img = img.convert(<span class="hljs-string">&quot;RGB&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：</p>
 <ul>
 <li>打开图片</li>
 <li><strong>PNG透明格式 → 转成JPG</strong>（体积瞬间变小）</li>
 </ul>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">img.save(out_path, <span class="hljs-string">&quot;JPEG&quot;</span>, quality=quality, optimize=<span class="hljs-literal">True</span>)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：保存成JPG，按当前<code>quality</code>画质压缩。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> os.path.getsize(out_path) &lt; target_size:<br>    <span class="hljs-keyword">break</span><br>quality -= <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：</p>
 <ul>
@@ -430,7 +430,7 @@
 <li>满足就停止</li>
 <li>不满足就<strong>画质-5</strong>，再压缩一次</li>
 </ul>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">pdf_to_jpg_under_2mb</span>(<span class="hljs-params">pdf_path, output_folder</span>):<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：定义主函数</p>
 <ul>
@@ -438,26 +438,26 @@
 <li>输入：输出文件夹</li>
 <li>功能：<strong>PDF → JPG + 自动压缩到2MB内</strong></li>
 </ul>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(output_folder):<br>    os.makedirs(output_folder)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：如果文件夹不存在，<strong>自动创建</strong>。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">pdf = fitz.<span class="hljs-built_in">open</span>(pdf_path)<br>total = <span class="hljs-built_in">len</span>(pdf)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：打开PDF，获取<strong>总页数</strong>。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(total):<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：<strong>一页一页循环转换</strong>。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">page = pdf[i]<br>pix = page.get_pixmap(matrix=fitz.Matrix(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>))<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：把当前PDF页 → 转成高清图片。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">temp_png = os.path.join(output_folder, <span class="hljs-string">f&quot;temp_<span class="hljs-subst">&#123;i + <span class="hljs-number">1</span>&#125;</span>.png&quot;</span>)<br>final_jpg = os.path.join(output_folder, <span class="hljs-string">f&quot;page_<span class="hljs-subst">&#123;i + <span class="hljs-number">1</span>&#125;</span>.jpg&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：</p>
 <ul>
 <li>临时文件：temp.png</li>
 <li>最终文件：page_1.jpg、page_2.jpg…</li>
 </ul>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">pix.save(temp_png)<br>compress_image(temp_png, final_jpg)<br>os.remove(temp_png)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：</p>
 <ol>
@@ -465,27 +465,27 @@
 <li><strong>压缩到2MB内</strong></li>
 <li><strong>删除临时文件</strong>（不留垃圾）</li>
 </ol>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;✅ 第 <span class="hljs-subst">&#123;i + <span class="hljs-number">1</span>&#125;</span> 页完成：<span class="hljs-subst">&#123;final_jpg&#125;</span>&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：打印进度。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">pdf.close()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\n🎉 全部转换完成！所有图片均 &lt; 2MB&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：关闭PDF，提示完成。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：程序主入口，从这里开始运行。</p>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">YOUR_PDF = <span class="hljs-string">r&quot;*.pdf&quot;</span><br>OUTPUT_FOLDER = <span class="hljs-string">r&quot;*\压缩后的图片&quot;</span><br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：</p>
 <ul>
 <li><code>YOUR_PDF</code>：你的PDF文件路径</li>
 <li><code>OUTPUT_FOLDER</code>：<strong>图片输出文件夹</strong></li>
 </ul>
-<hr>
+<hr />
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pdf_to_jpg_under_2mb(YOUR_PDF, OUTPUT_FOLDER)<br></code></pre></td></tr></table></figure>
 <p>✅ <strong>作用</strong>：执行转换！</p>
-<hr>
-<h1 id="三、运行前必须做的事">三、运行前必须做的事</h1>
+<hr />
+<h1 id="三-运行前必须做的事"><a class="markdownIt-Anchor" href="#三-运行前必须做的事"></a> 三、运行前必须做的事</h1>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install pymupdf pillow<br></code></pre></td></tr></table></figure>
                 
               </div>
