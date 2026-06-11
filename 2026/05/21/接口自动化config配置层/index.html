@@ -331,7 +331,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          2.1k 字
         
       </span>
     
@@ -342,7 +342,7 @@
         
         
         
-          17 分钟
+          18 分钟
         
       </span>
     
@@ -386,86 +386,69 @@
             
               <div class="markdown-body">
                 
-                <h1 id="一-config-层核心功能"><a class="markdownIt-Anchor" href="#一-config-层核心功能"></a> 一、config 层核心功能</h1>
-<h2 id="1-统一管理项目路径"><a class="markdownIt-Anchor" href="#1-统一管理项目路径"></a> 1. 统一管理项目路径</h2>
-<p>自动计算项目根目录，所有日志、报告、输出文件路径都基于此，<strong>避免路径报错</strong>。</p>
-<h2 id="2-环境地址集中配置"><a class="markdownIt-Anchor" href="#2-环境地址集中配置"></a> 2. 环境地址集中配置</h2>
-<p>管理接口基础地址，<strong>切换环境只改一处</strong>，不用动测试用例。</p>
-<h2 id="3-多数据库连接配置"><a class="markdownIt-Anchor" href="#3-多数据库连接配置"></a> 3. 多数据库连接配置</h2>
-<p>支持<strong>双数据库连接</strong>：</p>
+                <h1 id="一、config-层核心功能"><a href="#一、config-层核心功能" class="headerlink" title="一、config 层核心功能"></a>一、config 层核心功能</h1><h2 id="1-统一管理项目路径"><a href="#1-统一管理项目路径" class="headerlink" title="1. 统一管理项目路径"></a>1. 统一管理项目路径</h2><p>自动计算项目根目录，所有日志、报告、输出文件路径都基于此，<strong>避免路径报错</strong>。</p>
+<h2 id="2-环境地址集中配置"><a href="#2-环境地址集中配置" class="headerlink" title="2. 环境地址集中配置"></a>2. 环境地址集中配置</h2><p>管理接口基础地址，<strong>切换环境只改一处</strong>，不用动测试用例。</p>
+<h2 id="3-多数据库连接配置"><a href="#3-多数据库连接配置" class="headerlink" title="3. 多数据库连接配置"></a>3. 多数据库连接配置</h2><p>支持<strong>双数据库连接</strong>：</p>
 <ul>
 <li>主业务数据库（3306）</li>
-<li>成绩校验专用数据库（3308）<br />
-方便测试中做数据查询、结果校验。</li>
+<li>成绩校验专用数据库（3308）<br>方便测试中做数据查询、结果校验。</li>
 </ul>
-<h2 id="4-输出目录统一规划"><a class="markdownIt-Anchor" href="#4-输出目录统一规划"></a> 4. 输出目录统一规划</h2>
-<p>日志、测试报告、运行结果<strong>统一存放</strong>，结构清晰。</p>
-<h2 id="5-allure-测试报告配置"><a class="markdownIt-Anchor" href="#5-allure-测试报告配置"></a> 5. Allure 测试报告配置</h2>
-<p>指定报告生成路径，与 pytest 无缝对接。</p>
-<hr />
-<h1 id="二-详细解释"><a class="markdownIt-Anchor" href="#二-详细解释"></a> 二、详细解释</h1>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br></code></pre></td></tr></table></figure>
+<h2 id="4-输出目录统一规划"><a href="#4-输出目录统一规划" class="headerlink" title="4. 输出目录统一规划"></a>4. 输出目录统一规划</h2><p>日志、测试报告、运行结果<strong>统一存放</strong>，结构清晰。</p>
+<h2 id="5-Allure-测试报告配置"><a href="#5-Allure-测试报告配置" class="headerlink" title="5. Allure 测试报告配置"></a>5. Allure 测试报告配置</h2><p>指定报告生成路径，与 pytest 无缝对接。</p>
+<hr>
+<h1 id="二、详细解释"><a href="#二、详细解释" class="headerlink" title="二、详细解释"></a>二、详细解释</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br></code></pre></td></tr></table></figure>
 <ul>
-<li>导入 Python 内置系统模块，用于<strong>处理文件/文件夹路径</strong>。</li>
+<li>导入 Python 内置系统模块，用于<strong>处理文件&#x2F;文件夹路径</strong>。</li>
 </ul>
-<hr />
+<hr>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))<br></code></pre></td></tr></table></figure>
 <p><strong>项目根目录路径（最重要的基础路径）</strong></p>
 <ul>
-<li><code>__file__</code>：表示当前 <a target="_blank" rel="noopener" href="http://settings.py">settings.py</a> 文件</li>
+<li><code>__file__</code>：表示当前 settings.py 文件</li>
 <li><code>os.path.abspath(...)</code>：获取文件绝对路径</li>
 <li><code>os.path.dirname(...)</code>：获取上一级目录</li>
-<li>最终得到：<strong>项目根目录绝对路径</strong><br />
-所有后续路径都基于它拼接，保证项目可移植、不报错。</li>
+<li>最终得到：<strong>项目根目录绝对路径</strong><br>所有后续路径都基于它拼接，保证项目可移植、不报错。</li>
 </ul>
-<hr />
+<hr>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 环境配置：统一维护接口基础地址，便于切换环境</span><br>ENV_CONFIG = &#123;<br>    <span class="hljs-string">&quot;base_url&quot;</span>: <span class="hljs-string">&quot;http://117.*.*.134:6000&quot;</span>,<br>    <span class="hljs-string">&quot;mcp_base_url&quot;</span>: <span class="hljs-string">&quot;http://117.*.*.134:8080&quot;</span>,<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>接口服务地址配置</strong></p>
 <ul>
 <li><code>base_url</code>：主业务接口域名 + 端口</li>
-<li><code>mcp_base_url</code>：第三方/管理平台/其他服务地址<br />
-作用：测试用例中不写死地址，方便切换测试/预发/生产环境。</li>
+<li><code>mcp_base_url</code>：第三方&#x2F;管理平台&#x2F;其他服务地址<br>作用：测试用例中不写死地址，方便切换测试&#x2F;预发&#x2F;生产环境。</li>
 </ul>
-<hr />
+<hr>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 数据库配置：供 DbClient 默认读取</span><br>DB_CONFIG = &#123;<br>    <span class="hljs-string">&quot;host&quot;</span>: <span class="hljs-string">&quot;117.*.*.134&quot;</span>,<br>    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">3306</span>,<br>    <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;root&quot;</span>,<br>    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;123456&quot;</span>,<br>    <span class="hljs-string">&quot;database&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,<br>    <span class="hljs-string">&quot;charset&quot;</span>: <span class="hljs-string">&quot;utf8mb4&quot;</span>,<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>主业务数据库连接信息</strong><br />
-给项目中的数据库工具类（DbClient）使用，用于：</p>
+<p><strong>主业务数据库连接信息</strong><br>给项目中的数据库工具类（DbClient）使用，用于：</p>
 <ul>
 <li>查询接口执行后的数据是否正确</li>
 <li>测试前数据清理</li>
 <li>测试后结果校验</li>
 </ul>
-<hr />
+<hr>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 数据库配置（成绩校验专用）</span><br>DB_CONFIG_SCORE = &#123;<br>    <span class="hljs-string">&quot;host&quot;</span>: <span class="hljs-string">&quot;117.*.*.134&quot;</span>,<br>    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">3308</span>,<br>    <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;root&quot;</span>,<br>    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;123456&quot;</span>,<br>    <span class="hljs-string">&quot;database&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>,<br>    <span class="hljs-string">&quot;charset&quot;</span>: <span class="hljs-string">&quot;utf8mb4&quot;</span>,<br>&#125;<br></code></pre></td></tr></table></figure>
 <p><strong>成绩模块专用数据库</strong></p>
 <ul>
 <li>端口 3308，与主库分开</li>
-<li>专门用于<strong>成绩相关接口的数据校验</strong><br />
-体现项目支持<strong>多数据源、多库校验</strong>。</li>
+<li>专门用于<strong>成绩相关接口的数据校验</strong><br>体现项目支持<strong>多数据源、多库校验</strong>。</li>
 </ul>
-<hr />
+<hr>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 输出目录配置：日志、报告等产物统一落盘位置</span><br>OUTPUT_DIR = os.path.join(BASE_DIR, <span class="hljs-string">&quot;Output&quot;</span>)<br>LOG_DIR = os.path.join(OUTPUT_DIR, <span class="hljs-string">&quot;logs&quot;</span>)<br>REPORT_DIR = os.path.join(OUTPUT_DIR, <span class="hljs-string">&quot;report&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p><strong>输出文件路径配置</strong></p>
 <ul>
 <li><code>OUTPUT_DIR</code>：项目输出根目录</li>
 <li><code>LOG_DIR</code>：日志存放目录</li>
-<li><code>REPORT_DIR</code>：测试报告存放目录<br />
-好处：所有运行产物统一管理，结构干净。</li>
+<li><code>REPORT_DIR</code>：测试报告存放目录<br>好处：所有运行产物统一管理，结构干净。</li>
 </ul>
-<hr />
+<hr>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Allure 报告目录（与 pytest.ini 保持一致）</span><br>ALLURE_RESULT_DIR = os.path.join(BASE_DIR, <span class="hljs-string">&quot;report&quot;</span>, <span class="hljs-string">&quot;result&quot;</span>)<br>ALLURE_HTML_DIR = os.path.join(BASE_DIR, <span class="hljs-string">&quot;report&quot;</span>, <span class="hljs-string">&quot;html&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p><strong>Allure 测试报告专用路径</strong></p>
 <ul>
 <li><code>ALLURE_RESULT_DIR</code>：存放 pytest 运行原始数据</li>
-<li><code>ALLURE_HTML_DIR</code>：存放最终生成的网页报告<br />
-必须与 pytest.ini 配置一致，否则报告无法生成。</li>
+<li><code>ALLURE_HTML_DIR</code>：存放最终生成的网页报告<br>必须与 pytest.ini 配置一致，否则报告无法生成。</li>
 </ul>
-<hr />
-<h1 id="三-config-层在项目中的作用总结"><a class="markdownIt-Anchor" href="#三-config-层在项目中的作用总结"></a> 三、config 层在项目中的作用总结</h1>
-<h2 id="一句话定位"><a class="markdownIt-Anchor" href="#一句话定位"></a> 一句话定位</h2>
-<p><strong><a target="_blank" rel="noopener" href="http://settings.py">settings.py</a> = 整个接口自动化项目的配置中心</strong></p>
-<h2 id="核心价值"><a class="markdownIt-Anchor" href="#核心价值"></a> 核心价值</h2>
-<ol>
+<hr>
+<h1 id="三、config-层在项目中的作用总结"><a href="#三、config-层在项目中的作用总结" class="headerlink" title="三、config 层在项目中的作用总结"></a>三、config 层在项目中的作用总结</h1><h2 id="一句话定位"><a href="#一句话定位" class="headerlink" title="一句话定位"></a>一句话定位</h2><p><strong>settings.py &#x3D; 整个接口自动化项目的配置中心</strong></p>
+<h2 id="核心价值"><a href="#核心价值" class="headerlink" title="核心价值"></a>核心价值</h2><ol>
 <li><strong>统一配置，便于维护</strong></li>
 <li><strong>切换环境只需改一处</strong></li>
 <li><strong>路径自动计算，不报错</strong></li>
@@ -473,7 +456,7 @@
 <li><strong>报告、日志统一输出</strong></li>
 <li><strong>测试用例无硬编码，规范整洁</strong></li>
 </ol>
-<hr />
+<hr>
 
                 
               </div>
