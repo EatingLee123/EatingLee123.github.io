@@ -27,7 +27,7 @@
 <meta property="og:description" content="python数据类型、控制流程、函数和模块、面向对象编程、常用内置库&amp;常用内置函数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-17T07:02:55.000Z">
-<meta property="article:modified_time" content="2026-06-02T13:51:01.005Z">
+<meta property="article:modified_time" content="2026-06-02T13:52:43.962Z">
 <meta property="article:author" content="EatingLee">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
@@ -385,318 +385,241 @@
             
               <div class="markdown-body">
                 
-                <h1 id="一-数据类型"><a class="markdownIt-Anchor" href="#一-数据类型"></a> 一、数据类型</h1>
-<h2 id="1-数值类型"><a class="markdownIt-Anchor" href="#1-数值类型"></a> 1. 数值类型</h2>
-<h3 id="11-int-整数"><a class="markdownIt-Anchor" href="#11-int-整数"></a> 1.1 int 整数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">a = <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
-<h3 id="12-float-浮点数"><a class="markdownIt-Anchor" href="#12-float-浮点数"></a> 1.2 float 浮点数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">b = <span class="hljs-number">3.14</span><br></code></pre></td></tr></table></figure>
-<h4 id="常用方法"><a class="markdownIt-Anchor" href="#常用方法"></a> 常用方法</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">abs</span>(x)      <span class="hljs-comment"># 取绝对值</span><br><span class="hljs-built_in">round</span>(x,<span class="hljs-number">2</span>)  <span class="hljs-comment"># 保留指定小数位</span><br></code></pre></td></tr></table></figure>
-<h2 id="2-布尔类型-bool"><a class="markdownIt-Anchor" href="#2-布尔类型-bool"></a> 2. 布尔类型 bool</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-literal">True</span> / <span class="hljs-literal">False</span><br><span class="hljs-comment"># 空值、0、空容器均为False</span><br></code></pre></td></tr></table></figure>
-<h2 id="3-字符串-str"><a class="markdownIt-Anchor" href="#3-字符串-str"></a> 3. 字符串 str</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">s = <span class="hljs-string">&quot;hello python&quot;</span><br></code></pre></td></tr></table></figure>
-<h4 id="常用方法-2"><a class="markdownIt-Anchor" href="#常用方法-2"></a> 常用方法</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">s.strip()        <span class="hljs-comment"># 去除首尾空格</span><br>s.split(<span class="hljs-string">&quot;,&quot;</span>)     <span class="hljs-comment"># 按字符分割为列表</span><br><span class="hljs-string">&quot;&quot;</span>.join(列表)    <span class="hljs-comment"># 列表拼接成字符串</span><br>s.replace(a,b)   <span class="hljs-comment"># 内容替换</span><br>s.find(字符)     <span class="hljs-comment"># 查找索引</span><br>s.upper()        <span class="hljs-comment"># 转大写</span><br>s.lower()        <span class="hljs-comment"># 转小写</span><br><span class="hljs-built_in">len</span>(s)           <span class="hljs-comment"># 获取长度</span><br>s[起始:结束:步长] <span class="hljs-comment"># 切片取值</span><br>s[::-<span class="hljs-number">1</span>]         <span class="hljs-comment">#反转</span><br></code></pre></td></tr></table></figure>
-<h2 id="4-列表-list"><a class="markdownIt-Anchor" href="#4-列表-list"></a> 4. 列表 list</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">lst = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br></code></pre></td></tr></table></figure>
-<h4 id="增"><a class="markdownIt-Anchor" href="#增"></a> 增</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">append(元素)    <span class="hljs-comment"># 尾部追加</span><br>insert(下标,元素)<span class="hljs-comment"># 指定位置插入</span><br></code></pre></td></tr></table></figure>
-<h4 id="删"><a class="markdownIt-Anchor" href="#删"></a> 删</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">pop()           <span class="hljs-comment"># 删除末尾元素</span><br>remove(元素)    <span class="hljs-comment"># 删除指定元素</span><br>clear()         <span class="hljs-comment"># 清空列表</span><br></code></pre></td></tr></table></figure>
-<h4 id="改"><a class="markdownIt-Anchor" href="#改"></a> 改</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">lst[下标] = 新值<br></code></pre></td></tr></table></figure>
-<h4 id="查"><a class="markdownIt-Anchor" href="#查"></a> 查</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">len</span>(lst)        <span class="hljs-comment"># 获取长度</span><br>index(元素)     <span class="hljs-comment"># 查询元素下标</span><br>count(元素)     <span class="hljs-comment"># 统计元素个数</span><br></code></pre></td></tr></table></figure>
-<h4 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">sort()          <span class="hljs-comment"># 升序排序</span><br>reverse()       <span class="hljs-comment"># 列表反转</span><br></code></pre></td></tr></table></figure>
-<h2 id="5-元组-tuple"><a class="markdownIt-Anchor" href="#5-元组-tuple"></a> 5. 元组 tuple</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">t = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br></code></pre></td></tr></table></figure>
-<h4 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点</h4>
-<p>不可增删改，仅可读</p>
-<h4 id="常用方法-3"><a class="markdownIt-Anchor" href="#常用方法-3"></a> 常用方法</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">len</span>(t)<br>index()<br>count()<br></code></pre></td></tr></table></figure>
-<h2 id="6-字典-dict"><a class="markdownIt-Anchor" href="#6-字典-dict"></a> 6. 字典 dict</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">dic = &#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;张三&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">18</span>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="增改"><a class="markdownIt-Anchor" href="#增改"></a> 增改</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">dic[<span class="hljs-string">&quot;键&quot;</span>] = 值<br></code></pre></td></tr></table></figure>
-<h4 id="删-2"><a class="markdownIt-Anchor" href="#删-2"></a> 删</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">del</span> dic[<span class="hljs-string">&quot;键&quot;</span>]<br>pop(<span class="hljs-string">&quot;键&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h4 id="取值"><a class="markdownIt-Anchor" href="#取值"></a> 取值</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">dic.get(<span class="hljs-string">&quot;键&quot;</span>)  <span class="hljs-comment"># 无键不报错</span><br></code></pre></td></tr></table></figure>
-<h4 id="遍历"><a class="markdownIt-Anchor" href="#遍历"></a> 遍历</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">keys()         <span class="hljs-comment"># 获取所有键</span><br>values()       <span class="hljs-comment"># 获取所有值</span><br>items()        <span class="hljs-comment"># 获取所有键值对</span><br></code></pre></td></tr></table></figure>
-<h2 id="7-集合-set"><a class="markdownIt-Anchor" href="#7-集合-set"></a> 7. 集合 set</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">s = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="特点-2"><a class="markdownIt-Anchor" href="#特点-2"></a> 特点</h4>
-<p>自动去重，无序</p>
-<h4 id="常用方法-4"><a class="markdownIt-Anchor" href="#常用方法-4"></a> 常用方法</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">add(元素)      <span class="hljs-comment"># 添加元素</span><br>remove(元素)   <span class="hljs-comment"># 删除元素</span><br></code></pre></td></tr></table></figure>
-<h2 id="8-数据类型转换"><a class="markdownIt-Anchor" href="#8-数据类型转换"></a> 8. 数据类型转换</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">int</span>()       <span class="hljs-comment"># 转整数</span><br><span class="hljs-built_in">float</span>()     <span class="hljs-comment"># 转浮点数</span><br><span class="hljs-built_in">str</span>()       <span class="hljs-comment"># 转字符串</span><br><span class="hljs-built_in">list</span>()      <span class="hljs-comment"># 转列表</span><br><span class="hljs-built_in">tuple</span>()     <span class="hljs-comment"># 转元组</span><br><span class="hljs-built_in">dict</span>()      <span class="hljs-comment"># 转字典</span><br><span class="hljs-built_in">set</span>()       <span class="hljs-comment"># 转集合</span><br></code></pre></td></tr></table></figure>
-<h2 id="9四种容器对比"><a class="markdownIt-Anchor" href="#9四种容器对比"></a> 9.四种容器对比</h2>
-<ul>
-<li>
-<p>list<br />
-特点：有序、可改<br />
-适合场景：一批可增删的数据</p>
+                <h1 id="一、数据类型"><a href="#一、数据类型" class="headerlink" title="一、数据类型"></a>一、数据类型</h1><h2 id="1-数值类型"><a href="#1-数值类型" class="headerlink" title="1. 数值类型"></a>1. 数值类型</h2><h3 id="1-1-int-整数"><a href="#1-1-int-整数" class="headerlink" title="1.1 int 整数"></a>1.1 int 整数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">a = <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+<h3 id="1-2-float-浮点数"><a href="#1-2-float-浮点数" class="headerlink" title="1.2 float 浮点数"></a>1.2 float 浮点数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">b = <span class="hljs-number">3.14</span><br></code></pre></td></tr></table></figure>
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">abs</span>(x)      <span class="hljs-comment"># 取绝对值</span><br><span class="hljs-built_in">round</span>(x,<span class="hljs-number">2</span>)  <span class="hljs-comment"># 保留指定小数位</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="2-布尔类型-bool"><a href="#2-布尔类型-bool" class="headerlink" title="2. 布尔类型 bool"></a>2. 布尔类型 bool</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-literal">True</span> / <span class="hljs-literal">False</span><br><span class="hljs-comment"># 空值、0、空容器均为False</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="3-字符串-str"><a href="#3-字符串-str" class="headerlink" title="3. 字符串 str"></a>3. 字符串 str</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">s = <span class="hljs-string">&quot;hello python&quot;</span><br></code></pre></td></tr></table></figure>
+<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">s.strip()        <span class="hljs-comment"># 去除首尾空格</span><br>s.split(<span class="hljs-string">&quot;,&quot;</span>)     <span class="hljs-comment"># 按字符分割为列表</span><br><span class="hljs-string">&quot;&quot;</span>.join(列表)    <span class="hljs-comment"># 列表拼接成字符串</span><br>s.replace(a,b)   <span class="hljs-comment"># 内容替换</span><br>s.find(字符)     <span class="hljs-comment"># 查找索引</span><br>s.upper()        <span class="hljs-comment"># 转大写</span><br>s.lower()        <span class="hljs-comment"># 转小写</span><br><span class="hljs-built_in">len</span>(s)           <span class="hljs-comment"># 获取长度</span><br>s[起始:结束:步长] <span class="hljs-comment"># 切片取值</span><br>s[::-<span class="hljs-number">1</span>]         <span class="hljs-comment">#反转</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="4-列表-list"><a href="#4-列表-list" class="headerlink" title="4. 列表 list"></a>4. 列表 list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">lst = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br></code></pre></td></tr></table></figure>
+<h4 id="增"><a href="#增" class="headerlink" title="增"></a>增</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">append(元素)    <span class="hljs-comment"># 尾部追加</span><br>insert(下标,元素)<span class="hljs-comment"># 指定位置插入</span><br></code></pre></td></tr></table></figure>
+<h4 id="删"><a href="#删" class="headerlink" title="删"></a>删</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">pop()           <span class="hljs-comment"># 删除末尾元素</span><br>remove(元素)    <span class="hljs-comment"># 删除指定元素</span><br>clear()         <span class="hljs-comment"># 清空列表</span><br></code></pre></td></tr></table></figure>
+<h4 id="改"><a href="#改" class="headerlink" title="改"></a>改</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">lst[下标] = 新值<br></code></pre></td></tr></table></figure>
+<h4 id="查"><a href="#查" class="headerlink" title="查"></a>查</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">len</span>(lst)        <span class="hljs-comment"># 获取长度</span><br>index(元素)     <span class="hljs-comment"># 查询元素下标</span><br>count(元素)     <span class="hljs-comment"># 统计元素个数</span><br></code></pre></td></tr></table></figure>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">sort()          <span class="hljs-comment"># 升序排序</span><br>reverse()       <span class="hljs-comment"># 列表反转</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="5-元组-tuple"><a href="#5-元组-tuple" class="headerlink" title="5. 元组 tuple"></a>5. 元组 tuple</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">t = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br></code></pre></td></tr></table></figure>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>不可增删改，仅可读</p>
+<h4 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">len</span>(t)<br>index()<br>count()<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-字典-dict"><a href="#6-字典-dict" class="headerlink" title="6. 字典 dict"></a>6. 字典 dict</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">dic = &#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;张三&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-number">18</span>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="增改"><a href="#增改" class="headerlink" title="增改"></a>增改</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">dic[<span class="hljs-string">&quot;键&quot;</span>] = 值<br></code></pre></td></tr></table></figure>
+<h4 id="删-1"><a href="#删-1" class="headerlink" title="删"></a>删</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">del</span> dic[<span class="hljs-string">&quot;键&quot;</span>]<br>pop(<span class="hljs-string">&quot;键&quot;</span>)<br></code></pre></td></tr></table></figure>
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">dic.get(<span class="hljs-string">&quot;键&quot;</span>)  <span class="hljs-comment"># 无键不报错</span><br></code></pre></td></tr></table></figure>
+<h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">keys()         <span class="hljs-comment"># 获取所有键</span><br>values()       <span class="hljs-comment"># 获取所有值</span><br>items()        <span class="hljs-comment"># 获取所有键值对</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="7-集合-set"><a href="#7-集合-set" class="headerlink" title="7. 集合 set"></a>7. 集合 set</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">s = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>自动去重，无序</p>
+<h4 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">add(元素)      <span class="hljs-comment"># 添加元素</span><br>remove(元素)   <span class="hljs-comment"># 删除元素</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="8-数据类型转换"><a href="#8-数据类型转换" class="headerlink" title="8. 数据类型转换"></a>8. 数据类型转换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">int</span>()       <span class="hljs-comment"># 转整数</span><br><span class="hljs-built_in">float</span>()     <span class="hljs-comment"># 转浮点数</span><br><span class="hljs-built_in">str</span>()       <span class="hljs-comment"># 转字符串</span><br><span class="hljs-built_in">list</span>()      <span class="hljs-comment"># 转列表</span><br><span class="hljs-built_in">tuple</span>()     <span class="hljs-comment"># 转元组</span><br><span class="hljs-built_in">dict</span>()      <span class="hljs-comment"># 转字典</span><br><span class="hljs-built_in">set</span>()       <span class="hljs-comment"># 转集合</span><br></code></pre></td></tr></table></figure>
+<h2 id="9-四种容器对比"><a href="#9-四种容器对比" class="headerlink" title="9.四种容器对比"></a>9.四种容器对比</h2><ul>
+<li><p>list<br>特点：有序、可改<br>适合场景：一批可增删的数据</p>
 </li>
-<li>
-<p>tuple<br />
-特点：有序、通常不改<br />
-适合场景：固定结构数据、函数多返回值</p>
+<li><p>tuple<br>特点：有序、通常不改<br>适合场景：固定结构数据、函数多返回值</p>
 </li>
-<li>
-<p>dict<br />
-特点：键值映射<br />
-适合场景：用户信息、配置、JSON</p>
+<li><p>dict<br>特点：键值映射<br>适合场景：用户信息、配置、JSON</p>
 </li>
-<li>
-<p>set<br />
-特点：无重复<br />
-适合场景：去重、成员判断</p>
+<li><p>set<br>特点：无重复<br>适合场景：去重、成员判断</p>
 </li>
 </ul>
-<h1 id="二-控制流程"><a class="markdownIt-Anchor" href="#二-控制流程"></a> 二、控制流程</h1>
-<h2 id="1-顺序结构"><a class="markdownIt-Anchor" href="#1-顺序结构"></a> 1. 顺序结构</h2>
-<p>从上到下依次执行，默认执行流程</p>
+<h1 id="二、控制流程"><a href="#二、控制流程" class="headerlink" title="二、控制流程"></a>二、控制流程</h1><h2 id="1-顺序结构"><a href="#1-顺序结构" class="headerlink" title="1. 顺序结构"></a>1. 顺序结构</h2><p>从上到下依次执行，默认执行流程</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;第一步&quot;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;第二步&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h2 id="2-分支结构"><a class="markdownIt-Anchor" href="#2-分支结构"></a> 2. 分支结构</h2>
-<h3 id="21-if-单分支"><a class="markdownIt-Anchor" href="#21-if-单分支"></a> 2.1 if 单分支</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> 条件:<br>    代码块<br></code></pre></td></tr></table></figure>
-<h3 id="22-if-else-双分支"><a class="markdownIt-Anchor" href="#22-if-else-双分支"></a> 2.2 if else 双分支</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> 条件:<br>    成立执行<br><span class="hljs-keyword">else</span>:<br>    不成立执行<br></code></pre></td></tr></table></figure>
-<h3 id="23-if-elif-else-多分支"><a class="markdownIt-Anchor" href="#23-if-elif-else-多分支"></a> 2.3 if elif else 多分支</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> 条件<span class="hljs-number">1</span>:<br>    代码<br><span class="hljs-keyword">elif</span> 条件<span class="hljs-number">2</span>:<br>    代码<br><span class="hljs-keyword">else</span>:<br>    代码<br></code></pre></td></tr></table></figure>
-<h3 id="24-三目运算符"><a class="markdownIt-Anchor" href="#24-三目运算符"></a> 2.4 三目运算符</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">结果<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> 条件 <span class="hljs-keyword">else</span> 结果<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-<h2 id="3-循环结构"><a class="markdownIt-Anchor" href="#3-循环结构"></a> 3. 循环结构</h2>
-<h3 id="31-while-循环"><a class="markdownIt-Anchor" href="#31-while-循环"></a> 3.1 while 循环</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> 条件:<br>    循环体<br></code></pre></td></tr></table></figure>
-<h3 id="32-for-循环"><a class="markdownIt-Anchor" href="#32-for-循环"></a> 3.2 for 循环</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> 变量 <span class="hljs-keyword">in</span> 可迭代对象:<br>    循环体<br><br><span class="hljs-comment"># 常用范围循环</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(起始,结束,步长):<br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
-<h2 id="4-循环控制语句"><a class="markdownIt-Anchor" href="#4-循环控制语句"></a> 4. 循环控制语句</h2>
-<h3 id="41-break"><a class="markdownIt-Anchor" href="#41-break"></a> 4.1 break</h3>
-<p>终止整个循环，跳出循环</p>
-<h3 id="42-continue"><a class="markdownIt-Anchor" href="#42-continue"></a> 4.2 continue</h3>
-<p>跳过当前一次循环，直接进入下一次</p>
-<h3 id="43-enumerate"><a class="markdownIt-Anchor" href="#43-enumerate"></a> 4.3 enumerate</h3>
-<p><code>enumerate</code> 是 Python <strong>自带的函数</strong>，作用只有一个：<br />
-<strong>在遍历列表/元组等可迭代对象时，同时拿到「索引 + 元素」</strong></p>
-<h4 id="最简单的例子"><a class="markdownIt-Anchor" href="#最简单的例子"></a> 最简单的例子</h4>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 一个普通列表</span><br>fruits = [<span class="hljs-string">&quot;苹果&quot;</span>, <span class="hljs-string">&quot;香蕉&quot;</span>, <span class="hljs-string">&quot;橙子&quot;</span>]<br><br><span class="hljs-comment"># 用 enumerate 遍历</span><br><span class="hljs-keyword">for</span> index, value <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(fruits):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;索引：&quot;</span>, index, <span class="hljs-string">&quot; 内容：&quot;</span>, value)<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-分支结构"><a href="#2-分支结构" class="headerlink" title="2. 分支结构"></a>2. 分支结构</h2><h3 id="2-1-if-单分支"><a href="#2-1-if-单分支" class="headerlink" title="2.1 if 单分支"></a>2.1 if 单分支</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> 条件:<br>    代码块<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-2-if-else-双分支"><a href="#2-2-if-else-双分支" class="headerlink" title="2.2 if else 双分支"></a>2.2 if else 双分支</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> 条件:<br>    成立执行<br><span class="hljs-keyword">else</span>:<br>    不成立执行<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-3-if-elif-else-多分支"><a href="#2-3-if-elif-else-多分支" class="headerlink" title="2.3 if elif else 多分支"></a>2.3 if elif else 多分支</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> 条件<span class="hljs-number">1</span>:<br>    代码<br><span class="hljs-keyword">elif</span> 条件<span class="hljs-number">2</span>:<br>    代码<br><span class="hljs-keyword">else</span>:<br>    代码<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-4-三目运算符"><a href="#2-4-三目运算符" class="headerlink" title="2.4 三目运算符"></a>2.4 三目运算符</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">结果<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> 条件 <span class="hljs-keyword">else</span> 结果<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="3-循环结构"><a href="#3-循环结构" class="headerlink" title="3. 循环结构"></a>3. 循环结构</h2><h3 id="3-1-while-循环"><a href="#3-1-while-循环" class="headerlink" title="3.1 while 循环"></a>3.1 while 循环</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">while</span> 条件:<br>    循环体<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-for-循环"><a href="#3-2-for-循环" class="headerlink" title="3.2 for 循环"></a>3.2 for 循环</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> 变量 <span class="hljs-keyword">in</span> 可迭代对象:<br>    循环体<br><br><span class="hljs-comment"># 常用范围循环</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(起始,结束,步长):<br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="4-循环控制语句"><a href="#4-循环控制语句" class="headerlink" title="4. 循环控制语句"></a>4. 循环控制语句</h2><h3 id="4-1-break"><a href="#4-1-break" class="headerlink" title="4.1 break"></a>4.1 break</h3><p>终止整个循环，跳出循环</p>
+<h3 id="4-2-continue"><a href="#4-2-continue" class="headerlink" title="4.2 continue"></a>4.2 continue</h3><p>跳过当前一次循环，直接进入下一次</p>
+<h3 id="4-3-enumerate"><a href="#4-3-enumerate" class="headerlink" title="4.3 enumerate"></a>4.3 enumerate</h3><p><code>enumerate</code> 是 Python <strong>自带的函数</strong>，作用只有一个：<br><strong>在遍历列表&#x2F;元组等可迭代对象时，同时拿到「索引 + 元素」</strong></p>
+<h4 id="最简单的例子"><a href="#最简单的例子" class="headerlink" title="最简单的例子"></a>最简单的例子</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 一个普通列表</span><br>fruits = [<span class="hljs-string">&quot;苹果&quot;</span>, <span class="hljs-string">&quot;香蕉&quot;</span>, <span class="hljs-string">&quot;橙子&quot;</span>]<br><br><span class="hljs-comment"># 用 enumerate 遍历</span><br><span class="hljs-keyword">for</span> index, value <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(fruits):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;索引：&quot;</span>, index, <span class="hljs-string">&quot; 内容：&quot;</span>, value)<br></code></pre></td></tr></table></figure>
+
 <p>输出：</p>
 <figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tap">索引：<span class="hljs-number"> 0 </span> 内容： 苹果<br>索引：<span class="hljs-number"> 1 </span> 内容： 香蕉<br>索引：<span class="hljs-number"> 2 </span> 内容： 橙子<br></code></pre></td></tr></table></figure>
-<h4 id="不用-enumerate-会怎样"><a class="markdownIt-Anchor" href="#不用-enumerate-会怎样"></a> 不用 enumerate 会怎样？</h4>
-<p>不用它，你想同时拿索引和值会很麻烦：</p>
+
+<h4 id="不用-enumerate-会怎样？"><a href="#不用-enumerate-会怎样？" class="headerlink" title="不用 enumerate 会怎样？"></a>不用 enumerate 会怎样？</h4><p>不用它，你想同时拿索引和值会很麻烦：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">fruits = [<span class="hljs-string">&quot;苹果&quot;</span>, <span class="hljs-string">&quot;香蕉&quot;</span>, <span class="hljs-string">&quot;橙子&quot;</span>]<br><br><span class="hljs-comment"># 笨方法</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(fruits)):<br>    <span class="hljs-built_in">print</span>(i, fruits[i])<br></code></pre></td></tr></table></figure>
 <p><code>enumerate</code> 就是<strong>把上面这种写法简化了</strong>。</p>
-<h4 id="enumerate-还能指定起始索引"><a class="markdownIt-Anchor" href="#enumerate-还能指定起始索引"></a> enumerate 还能指定起始索引</h4>
-<p>默认从 0 开始，你可以改成从 1 开始：</p>
+<h4 id="enumerate-还能指定起始索引"><a href="#enumerate-还能指定起始索引" class="headerlink" title="enumerate 还能指定起始索引"></a>enumerate 还能指定起始索引</h4><p>默认从 0 开始，你可以改成从 1 开始：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> index, value <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(fruits, start=<span class="hljs-number">1</span>):<br>    <span class="hljs-built_in">print</span>(index, value)<br></code></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>苹果<br><span class="hljs-symbol">2 </span>香蕉<br><span class="hljs-symbol">3 </span>橙子<br></code></pre></td></tr></table></figure>
-<h4 id="最常用场景"><a class="markdownIt-Anchor" href="#最常用场景"></a> 最常用场景</h4>
-<ol>
+<h4 id="最常用场景"><a href="#最常用场景" class="headerlink" title="最常用场景"></a>最常用场景</h4><ol>
 <li>遍历列表<strong>需要知道元素位置</strong></li>
 <li>循环中需要<strong>序号</strong>（排行榜、编号、表格行号）</li>
 <li>代码比 <code>range(len())</code> 更简洁、更易读</li>
 </ol>
-<h2 id="5-逻辑运算符"><a class="markdownIt-Anchor" href="#5-逻辑运算符"></a> 5. 逻辑运算符</h2>
-<h3 id="51-and-并且"><a class="markdownIt-Anchor" href="#51-and-并且"></a> 5.1 and 并且</h3>
-<p>两边都为真才成立</p>
-<h3 id="52-or-或者"><a class="markdownIt-Anchor" href="#52-or-或者"></a> 5.2 or 或者</h3>
-<p>任意一边为真就成立</p>
-<h3 id="53-not-取反"><a class="markdownIt-Anchor" href="#53-not-取反"></a> 5.3 not 取反</h3>
-<p>真假颠倒</p>
-<h1 id="三-函数和模块"><a class="markdownIt-Anchor" href="#三-函数和模块"></a> 三、函数和模块</h1>
-<h2 id="1-函数"><a class="markdownIt-Anchor" href="#1-函数"></a> 1. 函数</h2>
-<h3 id="11-定义函数"><a class="markdownIt-Anchor" href="#11-定义函数"></a> 1.1 定义函数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">函数名</span>(<span class="hljs-params">参数</span>):<br>    函数体<br>    <span class="hljs-keyword">return</span> 返回值<br></code></pre></td></tr></table></figure>
-<h3 id="12-无参函数"><a class="markdownIt-Anchor" href="#12-无参函数"></a> 1.2 无参函数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>():<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;hello&quot;</span>)<br>hello()<br></code></pre></td></tr></table></figure>
-<h3 id="13-有参函数"><a class="markdownIt-Anchor" href="#13-有参函数"></a> 1.3 有参函数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a,b</span>):<br>    <span class="hljs-keyword">return</span> a+b<br><span class="hljs-built_in">print</span>(add(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>))<br></code></pre></td></tr></table></figure>
-<h3 id="14-默认参数"><a class="markdownIt-Anchor" href="#14-默认参数"></a> 1.4 默认参数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">n=<span class="hljs-number">10</span></span>):<br>    <span class="hljs-built_in">print</span>(n)<br></code></pre></td></tr></table></figure>
-<h3 id="15-关键字参数"><a class="markdownIt-Anchor" href="#15-关键字参数"></a> 1.5 关键字参数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">func(b=<span class="hljs-number">2</span>,a=<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
-<h3 id="16-不定长参数"><a class="markdownIt-Anchor" href="#16-不定长参数"></a> 1.6 不定长参数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 接收多个位置参数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">*args</span>):<br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 接收多个关键字参数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">**kwargs</span>):<br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
-<h3 id="17-函数作用域"><a class="markdownIt-Anchor" href="#17-函数作用域"></a> 1.7 函数作用域</h3>
-<ul>
+<h2 id="5-逻辑运算符"><a href="#5-逻辑运算符" class="headerlink" title="5. 逻辑运算符"></a>5. 逻辑运算符</h2><h3 id="5-1-and-并且"><a href="#5-1-and-并且" class="headerlink" title="5.1 and 并且"></a>5.1 and 并且</h3><p>两边都为真才成立</p>
+<h3 id="5-2-or-或者"><a href="#5-2-or-或者" class="headerlink" title="5.2 or 或者"></a>5.2 or 或者</h3><p>任意一边为真就成立</p>
+<h3 id="5-3-not-取反"><a href="#5-3-not-取反" class="headerlink" title="5.3 not 取反"></a>5.3 not 取反</h3><p>真假颠倒</p>
+<h1 id="三、函数和模块"><a href="#三、函数和模块" class="headerlink" title="三、函数和模块"></a>三、函数和模块</h1><h2 id="1-函数"><a href="#1-函数" class="headerlink" title="1. 函数"></a>1. 函数</h2><h3 id="1-1-定义函数"><a href="#1-1-定义函数" class="headerlink" title="1.1 定义函数"></a>1.1 定义函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">函数名</span>(<span class="hljs-params">参数</span>):<br>    函数体<br>    <span class="hljs-keyword">return</span> 返回值<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-2-无参函数"><a href="#1-2-无参函数" class="headerlink" title="1.2 无参函数"></a>1.2 无参函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>():<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;hello&quot;</span>)<br>hello()<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-3-有参函数"><a href="#1-3-有参函数" class="headerlink" title="1.3 有参函数"></a>1.3 有参函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a,b</span>):<br>    <span class="hljs-keyword">return</span> a+b<br><span class="hljs-built_in">print</span>(add(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>))<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-4-默认参数"><a href="#1-4-默认参数" class="headerlink" title="1.4 默认参数"></a>1.4 默认参数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">n=<span class="hljs-number">10</span></span>):<br>    <span class="hljs-built_in">print</span>(n)<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-5-关键字参数"><a href="#1-5-关键字参数" class="headerlink" title="1.5 关键字参数"></a>1.5 关键字参数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">func(b=<span class="hljs-number">2</span>,a=<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-6-不定长参数"><a href="#1-6-不定长参数" class="headerlink" title="1.6 不定长参数"></a>1.6 不定长参数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 接收多个位置参数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">*args</span>):<br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 接收多个关键字参数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">**kwargs</span>):<br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="1-7-函数作用域"><a href="#1-7-函数作用域" class="headerlink" title="1.7 函数作用域"></a>1.7 函数作用域</h3><ul>
 <li>局部变量：函数内部生效</li>
 <li>全局变量：全局生效，内部修改用<code>global</code></li>
 </ul>
-<h3 id="18-匿名函数"><a class="markdownIt-Anchor" href="#18-匿名函数"></a> 1.8 匿名函数</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">lambda</span> x,y:x+y<br></code></pre></td></tr></table></figure>
-<h2 id="2-模块"><a class="markdownIt-Anchor" href="#2-模块"></a> 2. 模块</h2>
-<h3 id="21-导入模块"><a class="markdownIt-Anchor" href="#21-导入模块"></a> 2.1 导入模块</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> 模块名<br><span class="hljs-keyword">import</span> 模块名 <span class="hljs-keyword">as</span> 别名<br><span class="hljs-keyword">from</span> 模块名 <span class="hljs-keyword">import</span> 功能<br><span class="hljs-keyword">from</span> 模块名 <span class="hljs-keyword">import</span> *<br></code></pre></td></tr></table></figure>
-<h3 id="22-常用内置模块"><a class="markdownIt-Anchor" href="#22-常用内置模块"></a> 2.2 常用内置模块</h3>
-<h4 id="1-os-模块"><a class="markdownIt-Anchor" href="#1-os-模块"></a> 1. os 模块</h4>
-<p>提供与操作系统交互的功能，用于<strong>文件/目录操作、路径处理</strong>。</p>
+<h3 id="1-8-匿名函数"><a href="#1-8-匿名函数" class="headerlink" title="1.8 匿名函数"></a>1.8 匿名函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">lambda</span> x,y:x+y<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-模块"><a href="#2-模块" class="headerlink" title="2. 模块"></a>2. 模块</h2><h3 id="2-1-导入模块"><a href="#2-1-导入模块" class="headerlink" title="2.1 导入模块"></a>2.1 导入模块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> 模块名<br><span class="hljs-keyword">import</span> 模块名 <span class="hljs-keyword">as</span> 别名<br><span class="hljs-keyword">from</span> 模块名 <span class="hljs-keyword">import</span> 功能<br><span class="hljs-keyword">from</span> 模块名 <span class="hljs-keyword">import</span> *<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-2-常用内置模块"><a href="#2-2-常用内置模块" class="headerlink" title="2.2 常用内置模块"></a>2.2 常用内置模块</h3><h4 id="1-os-模块"><a href="#1-os-模块" class="headerlink" title="1. os 模块"></a>1. os 模块</h4><p>提供与操作系统交互的功能，用于<strong>文件&#x2F;目录操作、路径处理</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.getcwd()          <span class="hljs-comment"># 获取当前路径</span><br>os.listdir()         <span class="hljs-comment"># 查看目录下文件</span><br>os.mkdir(<span class="hljs-string">&quot;文件夹&quot;</span>)    <span class="hljs-comment"># 创建文件夹</span><br>os.rmdir(<span class="hljs-string">&quot;文件夹&quot;</span>)    <span class="hljs-comment"># 删除文件夹</span><br>os.remove(<span class="hljs-string">&quot;文件&quot;</span>)    <span class="hljs-comment"># 删除文件</span><br>os.path.exists(<span class="hljs-string">&quot;路径&quot;</span>) <span class="hljs-comment"># 判断路径是否存在</span><br></code></pre></td></tr></table></figure>
-<h4 id="2-sys-模块"><a class="markdownIt-Anchor" href="#2-sys-模块"></a> 2. sys 模块</h4>
-<p>与 Python 解释器交互，获取<strong>命令行参数、退出程序、环境信息</strong>。</p>
+
+<h4 id="2-sys-模块"><a href="#2-sys-模块" class="headerlink" title="2. sys 模块"></a>2. sys 模块</h4><p>与 Python 解释器交互，获取<strong>命令行参数、退出程序、环境信息</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br>sys.argv     <span class="hljs-comment"># 获取命令行参数</span><br>sys.exit()   <span class="hljs-comment"># 退出程序</span><br>sys.path     <span class="hljs-comment"># 模块搜索路径</span><br></code></pre></td></tr></table></figure>
-<h4 id="3-random-模块"><a class="markdownIt-Anchor" href="#3-random-模块"></a> 3. random 模块</h4>
-<p>生成<strong>随机数、随机选择、随机打乱</strong>。</p>
+
+<h4 id="3-random-模块"><a href="#3-random-模块" class="headerlink" title="3. random 模块"></a>3. random 模块</h4><p>生成<strong>随机数、随机选择、随机打乱</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> random<br>random.randint(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>)    <span class="hljs-comment"># 1~10随机整数</span><br>random.random()        <span class="hljs-comment"># 0~1随机浮点数</span><br>random.choice([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) <span class="hljs-comment"># 随机选一个</span><br>random.shuffle([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<span class="hljs-comment"># 打乱顺序</span><br></code></pre></td></tr></table></figure>
-<h4 id="4-datetime-模块"><a class="markdownIt-Anchor" href="#4-datetime-模块"></a> 4. datetime 模块</h4>
-<p>处理<strong>日期、时间、格式化、时间计算</strong>。</p>
+
+<h4 id="4-datetime-模块"><a href="#4-datetime-模块" class="headerlink" title="4. datetime 模块"></a>4. datetime 模块</h4><p>处理<strong>日期、时间、格式化、时间计算</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime<br>datetime.now()         <span class="hljs-comment"># 当前时间</span><br>datetime.strftime()    <span class="hljs-comment"># 时间转字符串</span><br>datetime.strptime()    <span class="hljs-comment"># 字符串转时间</span><br></code></pre></td></tr></table></figure>
-<h4 id="5-math-模块"><a class="markdownIt-Anchor" href="#5-math-模块"></a> 5. math 模块</h4>
-<p>提供<strong>数学运算函数</strong>。</p>
+
+<h4 id="5-math-模块"><a href="#5-math-模块" class="headerlink" title="5. math 模块"></a>5. math 模块</h4><p>提供<strong>数学运算函数</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br>math.sqrt(<span class="hljs-number">16</span>)    <span class="hljs-comment"># 平方根</span><br>math.<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)    <span class="hljs-comment"># 2的3次方</span><br>math.pi          <span class="hljs-comment"># 圆周率</span><br>math.ceil(<span class="hljs-number">3.1</span>)   <span class="hljs-comment"># 向上取整</span><br>math.floor(<span class="hljs-number">3.9</span>)  <span class="hljs-comment"># 向下取整</span><br></code></pre></td></tr></table></figure>
-<h4 id="6-json-模块"><a class="markdownIt-Anchor" href="#6-json-模块"></a> 6. json 模块</h4>
-<p>处理 <strong>JSON 数据</strong>（字符串 ↔ 字典 互转）。</p>
+
+<h4 id="6-json-模块"><a href="#6-json-模块" class="headerlink" title="6. json 模块"></a>6. json 模块</h4><p>处理 <strong>JSON 数据</strong>（字符串 ↔ 字典 互转）。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br>json.dumps(字典)    <span class="hljs-comment"># 字典转JSON字符串</span><br>json.loads(字符串)  <span class="hljs-comment"># JSON字符串转字典</span><br></code></pre></td></tr></table></figure>
-<h4 id="7-csv-模块"><a class="markdownIt-Anchor" href="#7-csv-模块"></a> 7. csv 模块</h4>
-<p>读写 <strong>CSV 表格文件</strong>（逗号分隔）。</p>
+
+<h4 id="7-csv-模块"><a href="#7-csv-模块" class="headerlink" title="7. csv 模块"></a>7. csv 模块</h4><p>读写 <strong>CSV 表格文件</strong>（逗号分隔）。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> csv<br><span class="hljs-comment"># 读</span><br>csv.reader(文件)<br><span class="hljs-comment"># 写</span><br>csv.writer(文件).writerow(行数据)<br></code></pre></td></tr></table></figure>
-<h4 id="8-matplotlib-模块"><a class="markdownIt-Anchor" href="#8-matplotlib-模块"></a> 8. matplotlib 模块</h4>
-<p>数据<strong>可视化、绘图、折线图、柱状图</strong>。</p>
+
+<h4 id="8-matplotlib-模块"><a href="#8-matplotlib-模块" class="headerlink" title="8. matplotlib 模块"></a>8. matplotlib 模块</h4><p>数据<strong>可视化、绘图、折线图、柱状图</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br>plt.plot([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>])<br>plt.show()<br></code></pre></td></tr></table></figure>
-<h4 id="9-pandas-模块"><a class="markdownIt-Anchor" href="#9-pandas-模块"></a> 9. pandas 模块</h4>
-<p><strong>数据处理、数据分析、表格操作</strong>神器。</p>
+
+<h4 id="9-pandas-模块"><a href="#9-pandas-模块" class="headerlink" title="9. pandas 模块"></a>9. pandas 模块</h4><p><strong>数据处理、数据分析、表格操作</strong>神器。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br>df = pd.read_csv(<span class="hljs-string">&quot;a.csv&quot;</span>)  <span class="hljs-comment"># 读取文件</span><br>df.head()                  <span class="hljs-comment"># 查看前几行</span><br>df.info()                  <span class="hljs-comment"># 查看信息</span><br></code></pre></td></tr></table></figure>
-<h4 id="10-numpy-模块"><a class="markdownIt-Anchor" href="#10-numpy-模块"></a> 10. numpy 模块</h4>
-<p><strong>高性能数值计算、数组操作、矩阵、科学计算</strong>。</p>
+
+<h4 id="10-numpy-模块"><a href="#10-numpy-模块" class="headerlink" title="10. numpy 模块"></a>10. numpy 模块</h4><p><strong>高性能数值计算、数组操作、矩阵、科学计算</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br>arr = np.array([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])  <span class="hljs-comment"># 创建数组</span><br>arr.<span class="hljs-built_in">sum</span>()                <span class="hljs-comment"># 求和</span><br>arr.mean()               <span class="hljs-comment"># 平均值</span><br></code></pre></td></tr></table></figure>
-<h4 id="11-re-模块"><a class="markdownIt-Anchor" href="#11-re-模块"></a> 11. re 模块</h4>
-<p><strong>正则表达式</strong>，用于字符串<strong>匹配、查找、替换、分割</strong>。</p>
+
+<h4 id="11-re-模块"><a href="#11-re-模块" class="headerlink" title="11. re 模块"></a>11. re 模块</h4><p><strong>正则表达式</strong>，用于字符串<strong>匹配、查找、替换、分割</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br>re.findall(规则, 字符串)  <span class="hljs-comment"># 查找所有匹配</span><br>re.sub(规则, 替换, 字符串) <span class="hljs-comment"># 替换</span><br>re.<span class="hljs-keyword">match</span>(规则, 字符串)    <span class="hljs-comment"># 匹配开头</span><br></code></pre></td></tr></table></figure>
-<h3 id="23-自定义模块"><a class="markdownIt-Anchor" href="#23-自定义模块"></a> 2.3 自定义模块</h3>
-<ol>
+
+<h3 id="2-3-自定义模块"><a href="#2-3-自定义模块" class="headerlink" title="2.3 自定义模块"></a>2.3 自定义模块</h3><ol>
 <li>新建<code>.py</code>文件</li>
 <li>同目录下直接<code>import 文件名</code>调用</li>
 </ol>
-<h3 id="24-包导入"><a class="markdownIt-Anchor" href="#24-包导入"></a> 2.4 包导入</h3>
-<p>多层文件夹结构，使用<code>.</code>层级导入</p>
-<h1 id="四-面向对象编程"><a class="markdownIt-Anchor" href="#四-面向对象编程"></a> 四、面向对象编程</h1>
-<h2 id="1-面向对象概述"><a class="markdownIt-Anchor" href="#1-面向对象概述"></a> 1. 面向对象概述</h2>
-<p>面向对象简称OOP，把事物抽象成<strong>类</strong>，通过<strong>类</strong>创建<strong>对象</strong>，注重整体行为与特征。</p>
+<h3 id="2-4-包导入"><a href="#2-4-包导入" class="headerlink" title="2.4 包导入"></a>2.4 包导入</h3><p>多层文件夹结构，使用<code>.</code>层级导入</p>
+<h1 id="四、面向对象编程"><a href="#四、面向对象编程" class="headerlink" title="四、面向对象编程"></a>四、面向对象编程</h1><h2 id="1-面向对象概述"><a href="#1-面向对象概述" class="headerlink" title="1. 面向对象概述"></a>1. 面向对象概述</h2><p>面向对象简称OOP，把事物抽象成<strong>类</strong>，通过<strong>类</strong>创建<strong>对象</strong>，注重整体行为与特征。</p>
 <ul>
 <li>类：事物的抽象模板</li>
 <li>对象：类实例化出来的具体个体</li>
 <li>三大特性：封装、继承、多态</li>
 </ul>
-<h2 id="2-类与对象基础"><a class="markdownIt-Anchor" href="#2-类与对象基础"></a> 2. 类与对象基础</h2>
-<h3 id="21-定义类"><a class="markdownIt-Anchor" href="#21-定义类"></a> 2.1 定义类</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">类名</span>:<br>    <span class="hljs-comment"># 构造方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,参数</span>):<br>        <span class="hljs-variable language_">self</span>.属性 = 参数<br>    <span class="hljs-comment"># 实例方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">方法名</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
-<h3 id="22-创建对象"><a class="markdownIt-Anchor" href="#22-创建对象"></a> 2.2 创建对象</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">对象名 = 类名(传入参数)<br></code></pre></td></tr></table></figure>
-<h3 id="23-self关键字"><a class="markdownIt-Anchor" href="#23-self关键字"></a> 2.3 self关键字</h3>
-<ul>
+<h2 id="2-类与对象基础"><a href="#2-类与对象基础" class="headerlink" title="2. 类与对象基础"></a>2. 类与对象基础</h2><h3 id="2-1-定义类"><a href="#2-1-定义类" class="headerlink" title="2.1 定义类"></a>2.1 定义类</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">类名</span>:<br>    <span class="hljs-comment"># 构造方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,参数</span>):<br>        <span class="hljs-variable language_">self</span>.属性 = 参数<br>    <span class="hljs-comment"># 实例方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">方法名</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-2-创建对象"><a href="#2-2-创建对象" class="headerlink" title="2.2 创建对象"></a>2.2 创建对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">对象名 = 类名(传入参数)<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-3-self关键字"><a href="#2-3-self关键字" class="headerlink" title="2.3 self关键字"></a>2.3 self关键字</h3><ul>
 <li>代表<strong>当前实例对象本身</strong></li>
 <li>只能写在类内部方法中</li>
 <li>用来绑定对象属性、调用自身方法</li>
 </ul>
-<h2 id="3-构造与析构方法"><a class="markdownIt-Anchor" href="#3-构造与析构方法"></a> 3. 构造与析构方法</h2>
-<h3 id="31-init-构造方法"><a class="markdownIt-Anchor" href="#31-init-构造方法"></a> 3.1 <strong>init</strong> 构造方法</h3>
-<p>创建对象时<strong>自动执行</strong>，用来初始化属性</p>
+<h2 id="3-构造与析构方法"><a href="#3-构造与析构方法" class="headerlink" title="3. 构造与析构方法"></a>3. 构造与析构方法</h2><h3 id="3-1-init-构造方法"><a href="#3-1-init-构造方法" class="headerlink" title="3.1 init 构造方法"></a>3.1 <strong>init</strong> 构造方法</h3><p>创建对象时<strong>自动执行</strong>，用来初始化属性</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,name,age</span>):<br>        <span class="hljs-variable language_">self</span>.name = name<br>        <span class="hljs-variable language_">self</span>.age = age<br></code></pre></td></tr></table></figure>
-<h3 id="32-del-析构方法"><a class="markdownIt-Anchor" href="#32-del-析构方法"></a> 3.2 <strong>del</strong> 析构方法</h3>
-<p>对象被销毁时自动执行</p>
+
+<h3 id="3-2-del-析构方法"><a href="#3-2-del-析构方法" class="headerlink" title="3.2 del 析构方法"></a>3.2 <strong>del</strong> 析构方法</h3><p>对象被销毁时自动执行</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">__del__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;对象被销毁&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h2 id="4-成员分类"><a class="markdownIt-Anchor" href="#4-成员分类"></a> 4. 成员分类</h2>
-<h3 id="41-实例属性"><a class="markdownIt-Anchor" href="#41-实例属性"></a> 4.1 实例属性</h3>
-<p>属于单个对象，不同对象互不影响，通过<code>self.属性</code>定义</p>
-<h3 id="42-类属性"><a class="markdownIt-Anchor" href="#42-类属性"></a> 4.2 类属性</h3>
-<p>写在类内、方法外，所有对象共享</p>
+
+<h2 id="4-成员分类"><a href="#4-成员分类" class="headerlink" title="4. 成员分类"></a>4. 成员分类</h2><h3 id="4-1-实例属性"><a href="#4-1-实例属性" class="headerlink" title="4.1 实例属性"></a>4.1 实例属性</h3><p>属于单个对象，不同对象互不影响，通过<code>self.属性</code>定义</p>
+<h3 id="4-2-类属性"><a href="#4-2-类属性" class="headerlink" title="4.2 类属性"></a>4.2 类属性</h3><p>写在类内、方法外，所有对象共享</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span>:<br>    num = <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
-<h3 id="43-实例方法"><a class="markdownIt-Anchor" href="#43-实例方法"></a> 4.3 实例方法</h3>
-<p>默认带self，只能由对象调用</p>
-<h3 id="44-类方法"><a class="markdownIt-Anchor" href="#44-类方法"></a> 4.4 类方法</h3>
-<p>使用<code>@classmethod</code>装饰，参数为cls，操作类属性</p>
+
+<h3 id="4-3-实例方法"><a href="#4-3-实例方法" class="headerlink" title="4.3 实例方法"></a>4.3 实例方法</h3><p>默认带self，只能由对象调用</p>
+<h3 id="4-4-类方法"><a href="#4-4-类方法" class="headerlink" title="4.4 类方法"></a>4.4 类方法</h3><p>使用<code>@classmethod</code>装饰，参数为cls，操作类属性</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@classmethod</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">cls</span>):<br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
-<h3 id="45-静态方法"><a class="markdownIt-Anchor" href="#45-静态方法"></a> 4.5 静态方法</h3>
-<p>使用<code>@staticmethod</code>装饰，无默认参数，和类、对象关联弱</p>
+
+<h3 id="4-5-静态方法"><a href="#4-5-静态方法" class="headerlink" title="4.5 静态方法"></a>4.5 静态方法</h3><p>使用<code>@staticmethod</code>装饰，无默认参数，和类、对象关联弱</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@staticmethod</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>():<br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
-<h2 id="5-面向对象三大特性"><a class="markdownIt-Anchor" href="#5-面向对象三大特性"></a> 5. 面向对象三大特性</h2>
-<h3 id="51-封装"><a class="markdownIt-Anchor" href="#51-封装"></a> 5.1 封装</h3>
-<p>将属性和方法封装在类中，隐藏内部细节，对外提供访问接口</p>
+
+<h2 id="5-面向对象三大特性"><a href="#5-面向对象三大特性" class="headerlink" title="5. 面向对象三大特性"></a>5. 面向对象三大特性</h2><h3 id="5-1-封装"><a href="#5-1-封装" class="headerlink" title="5.1 封装"></a>5.1 封装</h3><p>将属性和方法封装在类中，隐藏内部细节，对外提供访问接口</p>
 <ul>
 <li>私有属性：<code>__属性名</code>，外部无法直接访问</li>
 </ul>
-<h3 id="52-继承"><a class="markdownIt-Anchor" href="#52-继承"></a> 5.2 继承</h3>
-<p>子类继承父类所有属性和方法，代码复用</p>
+<h3 id="5-2-继承"><a href="#5-2-继承" class="headerlink" title="5.2 继承"></a>5.2 继承</h3><p>子类继承父类所有属性和方法，代码复用</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 单继承</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">子类名</span>(<span class="hljs-title class_ inherited__">父类名</span>):<br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 多继承</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">子类</span>(父类<span class="hljs-number">1</span>,父类<span class="hljs-number">2</span>):<br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 重写父类方法</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">同名方法</span>(<span class="hljs-params">self</span>):<br>    重写逻辑<br></code></pre></td></tr></table></figure>
-<h3 id="53-多态"><a class="markdownIt-Anchor" href="#53-多态"></a> 5.3 多态</h3>
-<p>不同子类调用同一个父类方法，呈现不同执行效果，依赖继承与方法重写</p>
-<h2 id="6-常用内置魔法方法"><a class="markdownIt-Anchor" href="#6-常用内置魔法方法"></a> 6. 常用内置魔法方法</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">__str__    <span class="hljs-comment"># print对象时自动执行，自定义返回内容</span><br>__len__    <span class="hljs-comment"># 支持len()获取长度</span><br></code></pre></td></tr></table></figure>
-<h1 id="五-常见内置库常用内置函数"><a class="markdownIt-Anchor" href="#五-常见内置库常用内置函数"></a> 五、常见内置库&amp;常用内置函数</h1>
-<h2 id="1-常用内置库"><a class="markdownIt-Anchor" href="#1-常用内置库"></a> 1. 常用内置库</h2>
-<h3 id="11-datetime"><a class="markdownIt-Anchor" href="#11-datetime"></a> 1.1 datetime</h3>
-<p>日期时间工具，可获取当前时间、格式化时间、时间运算、格式转换</p>
+
+<h3 id="5-3-多态"><a href="#5-3-多态" class="headerlink" title="5.3 多态"></a>5.3 多态</h3><p>不同子类调用同一个父类方法，呈现不同执行效果，依赖继承与方法重写</p>
+<h2 id="6-常用内置魔法方法"><a href="#6-常用内置魔法方法" class="headerlink" title="6. 常用内置魔法方法"></a>6. 常用内置魔法方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">__str__    <span class="hljs-comment"># print对象时自动执行，自定义返回内容</span><br>__len__    <span class="hljs-comment"># 支持len()获取长度</span><br></code></pre></td></tr></table></figure>
+<h1 id="五、常见内置库-常用内置函数"><a href="#五、常见内置库-常用内置函数" class="headerlink" title="五、常见内置库&amp;常用内置函数"></a>五、常见内置库&amp;常用内置函数</h1><h2 id="1-常用内置库"><a href="#1-常用内置库" class="headerlink" title="1. 常用内置库"></a>1. 常用内置库</h2><h3 id="1-1-datetime"><a href="#1-1-datetime" class="headerlink" title="1.1 datetime"></a>1.1 datetime</h3><p>日期时间工具，可获取当前时间、格式化时间、时间运算、格式转换</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime<br><span class="hljs-comment"># 获取当前时间</span><br>now = datetime.now()<br><span class="hljs-comment"># 时间格式化</span><br>now.strftime(<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h3 id="12-re"><a class="markdownIt-Anchor" href="#12-re"></a> 1.2 re</h3>
-<p>正则表达式库，实现字符串匹配、查找、替换、分割</p>
+
+<h3 id="1-2-re"><a href="#1-2-re" class="headerlink" title="1.2 re"></a>1.2 re</h3><p>正则表达式库，实现字符串匹配、查找、替换、分割</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br>re.findall(<span class="hljs-string">&quot;匹配规则&quot;</span>,<span class="hljs-string">&quot;内容&quot;</span>)<br>re.sub(<span class="hljs-string">&quot;旧规则&quot;</span>,<span class="hljs-string">&quot;新内容&quot;</span>,<span class="hljs-string">&quot;字符串&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h3 id="13-os"><a class="markdownIt-Anchor" href="#13-os"></a> 1.3 os</h3>
-<p>操作系统交互库，实现文件、文件夹创建、删除、重命名、路径操作</p>
+
+<h3 id="1-3-os"><a href="#1-3-os" class="headerlink" title="1.3 os"></a>1.3 os</h3><p>操作系统交互库，实现文件、文件夹创建、删除、重命名、路径操作</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.mkdir(<span class="hljs-string">&quot;文件夹&quot;</span>)<br>os.remove(<span class="hljs-string">&quot;文件.txt&quot;</span>)<br>os.getcwd()<br></code></pre></td></tr></table></figure>
-<h3 id="14-math"><a class="markdownIt-Anchor" href="#14-math"></a> 1.4 math</h3>
-<p>数学运算库，提供开方、三角函数、取整、圆周率等运算</p>
+
+<h3 id="1-4-math"><a href="#1-4-math" class="headerlink" title="1.4 math"></a>1.4 math</h3><p>数学运算库，提供开方、三角函数、取整、圆周率等运算</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br>math.sqrt(<span class="hljs-number">16</span>)<br>math.ceil(<span class="hljs-number">3.2</span>)<br>math.floor(<span class="hljs-number">5.8</span>)<br></code></pre></td></tr></table></figure>
-<h3 id="15-random"><a class="markdownIt-Anchor" href="#15-random"></a> 1.5 random</h3>
-<p>随机数库，生成随机整数、浮点数、随机选取、打乱序列</p>
+
+<h3 id="1-5-random"><a href="#1-5-random" class="headerlink" title="1.5 random"></a>1.5 random</h3><p>随机数库，生成随机整数、浮点数、随机选取、打乱序列</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> random<br>random.randint(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>)<br>random.choice([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br></code></pre></td></tr></table></figure>
-<h3 id="16-json"><a class="markdownIt-Anchor" href="#16-json"></a> 1.6 json</h3>
-<p>JSON数据处理库，实现字典与JSON字符串相互转换</p>
+
+<h3 id="1-6-json"><a href="#1-6-json" class="headerlink" title="1.6 json"></a>1.6 json</h3><p>JSON数据处理库，实现字典与JSON字符串相互转换</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br>json.dumps(字典)<br>json.loads(json字符串)<br></code></pre></td></tr></table></figure>
-<h2 id="2-常用内置函数"><a class="markdownIt-Anchor" href="#2-常用内置函数"></a> 2. 常用内置函数</h2>
-<h3 id="21-基础类型相关"><a class="markdownIt-Anchor" href="#21-基础类型相关"></a> 2.1 基础类型相关</h3>
-<ul>
+
+<h2 id="2-常用内置函数"><a href="#2-常用内置函数" class="headerlink" title="2. 常用内置函数"></a>2. 常用内置函数</h2><h3 id="2-1-基础类型相关"><a href="#2-1-基础类型相关" class="headerlink" title="2.1 基础类型相关"></a>2.1 基础类型相关</h3><ul>
 <li><code>print()</code>：控制台打印输出内容</li>
 <li><code>len()</code>：获取字符串、列表、元组等长度</li>
 <li><code>max()</code>：获取序列最大值</li>
 <li><code>min()</code>：获取序列最小值</li>
 <li><code>type()</code>：判断数据所属类型</li>
 </ul>
-<h3 id="22-序列类型相关"><a class="markdownIt-Anchor" href="#22-序列类型相关"></a> 2.2 序列类型相关</h3>
-<ul>
+<h3 id="2-2-序列类型相关"><a href="#2-2-序列类型相关" class="headerlink" title="2.2 序列类型相关"></a>2.2 序列类型相关</h3><ul>
 <li><code>sorted()</code>：对序列进行排序</li>
 <li><code>enumerate()</code>：同时获取索引和对应元素</li>
 <li><code>zip()</code>：合并多个序列元素</li>
 <li><code>reversed()</code>：反转序列</li>
 <li><code>sum()</code>：计算序列数值总和</li>
 </ul>
-<h3 id="23-逻辑操作相关"><a class="markdownIt-Anchor" href="#23-逻辑操作相关"></a> 2.3 逻辑操作相关</h3>
-<ul>
+<h3 id="2-3-逻辑操作相关"><a href="#2-3-逻辑操作相关" class="headerlink" title="2.3 逻辑操作相关"></a>2.3 逻辑操作相关</h3><ul>
 <li><code>all()</code>：全部条件成立返回True</li>
 <li><code>any()</code>：任意一个条件成立返回True</li>
 <li><code>bool()</code>：转为布尔类型</li>
 <li><code>filter()</code>：根据条件过滤序列元素</li>
 </ul>
-<h3 id="24-数值操作相关"><a class="markdownIt-Anchor" href="#24-数值操作相关"></a> 2.4 数值操作相关</h3>
-<ul>
+<h3 id="2-4-数值操作相关"><a href="#2-4-数值操作相关" class="headerlink" title="2.4 数值操作相关"></a>2.4 数值操作相关</h3><ul>
 <li><code>abs()</code>：求取数字绝对值</li>
 <li><code>pow(x,y)</code>：计算x的y次方</li>
 <li><code>divmod()</code>：返回商和余数</li>
 <li><code>round()</code>：浮点数四舍五入</li>
 </ul>
-<h3 id="25-字符串操作相关"><a class="markdownIt-Anchor" href="#25-字符串操作相关"></a> 2.5 字符串操作相关</h3>
-<ul>
+<h3 id="2-5-字符串操作相关"><a href="#2-5-字符串操作相关" class="headerlink" title="2.5 字符串操作相关"></a>2.5 字符串操作相关</h3><ul>
 <li><code>ord()</code>：字符转为ASCII码值</li>
 <li><code>chr()</code>：ASCII码值转为对应字符</li>
 <li><code>str()</code>：任意数据转为字符串类型</li>
 </ul>
-<h1 id="六-文件-异常-模块"><a class="markdownIt-Anchor" href="#六-文件-异常-模块"></a> 六、文件、异常、模块</h1>
-<h2 id="61-文件读取"><a class="markdownIt-Anchor" href="#61-文件读取"></a> 6.1 文件读取</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;demo.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> f:<br>    content = f.read()<br><span class="hljs-built_in">print</span>(content)<br></code></pre></td></tr></table></figure>
-<h2 id="62-异常处理"><a class="markdownIt-Anchor" href="#62-异常处理"></a> 6.2 异常处理</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">try</span>:<br>    num = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入数字: &quot;</span>))<br>    <span class="hljs-built_in">print</span>(num)<br><span class="hljs-keyword">except</span> ValueError:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;你输入的不是合法数字&quot;</span>)<br></code></pre></td></tr></table></figure>
+<h1 id="六、文件、异常、模块"><a href="#六、文件、异常、模块" class="headerlink" title="六、文件、异常、模块"></a>六、文件、异常、模块</h1><h2 id="6-1-文件读取"><a href="#6-1-文件读取" class="headerlink" title="6.1 文件读取"></a>6.1 文件读取</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;demo.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> f:<br>    content = f.read()<br><span class="hljs-built_in">print</span>(content)<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-2-异常处理"><a href="#6-2-异常处理" class="headerlink" title="6.2 异常处理"></a>6.2 异常处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">try</span>:<br>    num = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入数字: &quot;</span>))<br>    <span class="hljs-built_in">print</span>(num)<br><span class="hljs-keyword">except</span> ValueError:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;你输入的不是合法数字&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p>程序并不总会按预想运行，异常处理就是给程序兜底。</p>
-<h2 id="63-模块导入"><a class="markdownIt-Anchor" href="#63-模块导入"></a> 6.3 模块导入</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br><span class="hljs-built_in">print</span>(math.sqrt(<span class="hljs-number">16</span>))<br></code></pre></td></tr></table></figure>
+<h2 id="6-3-模块导入"><a href="#6-3-模块导入" class="headerlink" title="6.3 模块导入"></a>6.3 模块导入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br><span class="hljs-built_in">print</span>(math.sqrt(<span class="hljs-number">16</span>))<br></code></pre></td></tr></table></figure>
 <p>模块可以理解成“别人已经写好的工具箱”。以后导入requests、openai、json这类模块，本质逻辑一致。</p>
-<hr />
-<h2 id="64-json为什么你一定会遇到"><a class="markdownIt-Anchor" href="#64-json为什么你一定会遇到"></a> 6.4 JSON为什么你一定会遇到</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br><br>user = &#123;<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;小王&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">18</span>&#125;<br>text = json.dumps(user, ensure_ascii=<span class="hljs-literal">False</span>)<br><span class="hljs-built_in">print</span>(text)<br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="6-4-JSON为什么你一定会遇到"><a href="#6-4-JSON为什么你一定会遇到" class="headerlink" title="6.4 JSON为什么你一定会遇到"></a>6.4 JSON为什么你一定会遇到</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br><br>user = &#123;<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;小王&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">18</span>&#125;<br>text = json.dumps(user, ensure_ascii=<span class="hljs-literal">False</span>)<br><span class="hljs-built_in">print</span>(text)<br></code></pre></td></tr></table></figure>
 <p>AI接口返回值、配置文件、前后端交互数据中JSON十分常用，在Python中JSON数据一般由字典、列表嵌套组成。</p>
 
                 
